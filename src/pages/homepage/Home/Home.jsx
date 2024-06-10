@@ -1,13 +1,11 @@
 import Banner from '../Banner/Banner';
+import Services from '../Services/Services';
 
 const Home = () => {
 	return (
 		<div>
 			<Banner />
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
-				dolores!
-			</p>
+			<Services />
 		</div>
 	);
 };
