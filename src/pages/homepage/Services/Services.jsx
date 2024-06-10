@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import CoverImg from '../../../assets/Cover.png';
-import Camera1 from '../../../assets/Camera1.jpg';
-import Camera2 from '../../../assets/Camera2.jpg';
+import CoverImg from '../../../../public/assets/Cover.png';
+import Camera1 from '../../../../public/assets/Camera1.jpg';
+import Camera2 from '../../../../public/assets/Camera2.jpg';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Services = () => {
 	const [currentSlider, setCurrentSlider] = useState(0);
@@ -28,11 +29,7 @@ const Services = () => {
 
 	return (
 		<>
-			<div>
-				<h1 className="text-center text-5xl font-bold my-20 text-textSecondary">
-					Our Services
-				</h1>
-			</div>
+			<SectionTitle title="Our Services" />
 			<div className="h-60 m-10 md:h-[470px] lg:h-[540px] relative overflow-hidden">
 				{/* arrow left */}
 				<button

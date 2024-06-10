@@ -1,5 +1,5 @@
 import CountUp from 'react-countup';
-import IntroVideo from '../../../assets/intro.mp4';
+import IntroVideo from '../../../../public/assets/intro.mp4';
 const Banner = () => {
 	return (
 		<div className="relative h-screen overflow-hidden">

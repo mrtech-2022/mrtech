@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import Logo from '../../../assets/MR-Tech2.png';
+import Logo from '../../../../public/assets/MR-Tech2.png';
 import { Link } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
 

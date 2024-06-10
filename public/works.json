@@ -1,0 +1,32 @@
+[
+	{
+		"id": 11,
+		"title": "North South University Bangladesh",
+		"image": "/public/assets/work-1.jpg"
+	},
+	{
+		"id": 12,
+		"title": "Independent University Bangladesh(IUB)",
+		"image": "/public/assets/work-2.jpg"
+	},
+	{
+		"id": 13,
+		"title": "Premier Cement Mills Limited",
+		"image": "/public/assets/work-3.jpg"
+	},
+	{
+		"id": 14,
+		"title": "United Group Power Station",
+		"image": "/public/assets/work-4.jpg"
+	},
+	{
+		"id": 14,
+		"title": "United Group Power Station",
+		"image": "/public/assets/work-4.jpg"
+	},
+	{
+		"id": 13,
+		"title": "Premier Cement Mills Limited",
+		"image": "/public/assets/work-3.jpg"
+	}
+]
