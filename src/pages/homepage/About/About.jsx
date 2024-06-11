@@ -7,7 +7,7 @@ const About = () => {
 	return (
 		<div className="w-full text-center">
 			<SectionTitle title="About Us" />
-			<p className="max-w-[110ch] mx-auto">
+			<p className="mx-3 md:max-w-[110ch] md:mx-auto">
 				We served security to someone's home, office, shop, restaurant or
 				other places by CCTV camera to protect from corruption. We also have
 				some IT section for. The bigger weapon now is not a gun, but a

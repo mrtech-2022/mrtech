@@ -1,0 +1,15 @@
+.marquee-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.marquee-image {
+	width: 50%;
+	transition: transform 0.3s ease-in-out;
+}
+
+.marquee-image:hover {
+	transform: scale(1.3);
+}

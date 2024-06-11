@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import useProjects from '../../../hooks/useProjects';
 
 const OurWorks = () => {
-	const [works, setWorks] = useState([]);
+	// const [works, setWorks] = useState([]);
+	const [projects] = useProjects();
 	const [showAll, setShowAll] = useState(false);
 	const projectsToShow = showAll ? showAll.length : 4;
-	useEffect(() => {
-		const worksData = async () => {
-			try {
-				const data = await fetch('works.json');
-				const response = await data.json();
-				setWorks(response);
-			} catch (err) {
-				console.log(err);
-			}
-		};
-		worksData();
-	}, []);
+
 	return (
 		<div>
 			<SectionTitle title="Our Works" />
-			<div className="grid grid-cols-4 gap-10 mx-24">
-				{works.slice(0, projectsToShow).map(work => (
+			<div className="grid grid-cols-2 md:grid-cols-4 gap-10 mx-16 md:mx-24">
+				{projects.slice(0, projectsToShow).map(work => (
 					<div key={work.id}>
 						<img src={work.image} alt="" />
 						<p className="font-bold text-center mt-3">{work.title}</p>

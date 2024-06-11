@@ -1,32 +1,26 @@
 [
 	{
-		"id": 11,
 		"title": "North South University Bangladesh",
-		"image": "/public/assets/work-1.jpg"
+		"image": "https://i.ibb.co/xfPWrJs/work-1.jpg"
 	},
 	{
-		"id": 12,
 		"title": "Independent University Bangladesh(IUB)",
-		"image": "/public/assets/work-2.jpg"
+		"image": "https://i.ibb.co/Tc72wdL/work-2.png"
 	},
 	{
-		"id": 13,
 		"title": "Premier Cement Mills Limited",
-		"image": "/public/assets/work-3.jpg"
+		"image": "https://i.ibb.co/gM0w8cn/work-3.jpg"
 	},
 	{
-		"id": 14,
 		"title": "United Group Power Station",
-		"image": "/public/assets/work-4.jpg"
+		"image": "https://i.ibb.co/R3Qw378/work-4.jpg.jpg"
 	},
 	{
-		"id": 14,
 		"title": "United Group Power Station",
-		"image": "/public/assets/work-4.jpg"
+		"image": "https://i.ibb.co/R3Qw378/work-4.jpg"
 	},
 	{
-		"id": 13,
 		"title": "Premier Cement Mills Limited",
-		"image": "/public/assets/work-3.jpg"
+		"image": "https://i.ibb.co/gM0w8cn/work-3"
 	}
 ]

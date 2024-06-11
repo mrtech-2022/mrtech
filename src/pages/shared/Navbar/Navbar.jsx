@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
 
 const NavBar = () => {
-	const [dropDownState, setDropDownState] = useState(false);
+	const [openDropdown, setOpenDropdown] = useState(null);
 	const dropDownMenuRef = useRef();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -18,7 +18,7 @@ const NavBar = () => {
 				dropDownMenuRef.current &&
 				!dropDownMenuRef.current.contains(e.target)
 			) {
-				setDropDownState(false);
+				setOpenDropdown(null);
 			}
 		};
 		document.addEventListener('mousedown', closeDropDown);
@@ -27,26 +27,30 @@ const NavBar = () => {
 		};
 	}, []);
 
+	const handleDropdownClick = menu => {
+		if (openDropdown === menu) {
+			setOpenDropdown(null);
+		} else {
+			setOpenDropdown(menu);
+		}
+	};
+
 	const listing = (
 		<>
-			<li className="group flex  cursor-pointer flex-col">
+			<li className="group flex cursor-pointer flex-col">
 				<Link smooth to="/">
 					Home
 				</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex  cursor-pointer flex-col">
-				<Link to="/services">About</Link>
-				<span className="hidden md:block mt-[2px] h-[3px]  w-[0px] rounded-full bg-textPrimary text-textPrimary transition-all duration-300 group-hover:w-full"></span>
-			</li>
 			<li ref={dropDownMenuRef} className="relative group cursor-pointer">
 				<button
-					onClick={() => setDropDownState(!dropDownState)}
-					className="relative flex items-center gap-1 "
+					onClick={() => handleDropdownClick('about')}
+					className="relative flex items-center gap-1"
 				>
-					<span>Services</span>
+					<span>About</span>
 					<svg
-						className={`${dropDownState ? '' : 'rotate-180'}`}
+						className={`${openDropdown === 'about' ? '' : 'rotate-180'}`}
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
@@ -60,29 +64,69 @@ const NavBar = () => {
 						<path d="m18 15-6-6-6 6" />
 					</svg>
 				</button>
-				{dropDownState && (
-					<ul className="absolute transition-all duration-700  top-10 z-10 space-y-2 rounded-lg bg-white p-2 text-black ">
-						<li className="px-3 hover:text-textPrimary ">
+				{openDropdown === 'about' && (
+					<ul className="absolute transition-all duration-700 top-10 w-44 z-10 space-y-2 rounded-lg bg-white p-2 text-black">
+						<li className="px-3 hover:text-textPrimary">
+							<Link href="#">About MR Tech</Link>
+						</li>
+						<li className="px-3 hover:text-textPrimary">
+							<Link href="#">MR Tech profile</Link>
+						</li>
+					</ul>
+				)}
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
+			</li>
+			<li className="group flex cursor-pointer flex-col">
+				<Link to="/projects">Projects</Link>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
+			</li>
+
+			<li ref={dropDownMenuRef} className="relative group cursor-pointer">
+				<button
+					onClick={() => handleDropdownClick('services')}
+					className="relative flex items-center gap-1"
+				>
+					<span>Services</span>
+					<svg
+						className={`${
+							openDropdown === 'services' ? '' : 'rotate-180'
+						}`}
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					>
+						<path d="m18 15-6-6-6 6" />
+					</svg>
+				</button>
+				{openDropdown === 'services' && (
+					<ul className="absolute transition-all duration-700 top-10 z-10 space-y-2 rounded-lg bg-white p-2 text-black">
+						<li className="px-3 hover:text-textPrimary">
 							<Link href="#">Transport</Link>
 						</li>
-						<li className="px-3 hover:text-textPrimary ">
+						<li className="px-3 hover:text-textPrimary">
 							<Link href="#">Management</Link>
 						</li>
 					</ul>
 				)}
-				<span className="hidden md:block mt-[2px] h-[3px]  w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex  cursor-pointer flex-col">
-				<Link to="/projects">Projects</Link>
-				<span className="hidden md:block mt-[2px] h-[3px]  w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
+
+			<li className="group flex cursor-pointer flex-col">
+				<Link to="/projects">Gallery</Link>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex  cursor-pointer flex-col">
+			<li className="group flex cursor-pointer flex-col">
 				<Link to="/contacts">Contacts</Link>
-				<span className="hidden md:block mt-[2px] h-[3px]  w-[0px] rounded-full bg-textPrimary text-textPrimary transition-all duration-300 group-hover:w-full"></span>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary text-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 		</>
 	);
-
 	return (
 		<nav className="fixed top-0 w-full p-4 h-[70px] z-50 bg-white">
 			<div className="flex justify-between mx-5 md:mx-10 items-center">

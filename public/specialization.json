@@ -1,47 +1,38 @@
 [
 	{
-		"id": 1,
+		"_id": "6667bbee1a81ff5e9930ed5b",
 		"name": "Vulnerability Assessment",
-		"image": "https://i.ibb.co/y5g2qt1/security-testing.png"
+		"image": "https://i.ibb.co/y5g2qt1/security-testing.png",
+		"details": "Involves conducting systematic scans to identify potential weaknesses in systems, networks, and applications. Unlike penetration testing, vulnerability assessments do not exploit identified vulnerabilities but rather provide a broad overview of the organization's security posture. By highlighting vulnerabilities without exploiting them, vulnerability assessments help organizations prioritize and address security issues proactively."
 	},
 	{
-		"id": 2,
+		"_id": "6667bbee1a81ff5e9930ed5c",
 		"name": "On-demand Penetration Testing",
-		"image": "https://i.ibb.co/3M4KWw3/security-testing-1.png"
+		"image": "https://i.ibb.co/3M4KWw3/security-testing-1.png",
+		"details": "Offers ad-hoc testing based on client needs. Ethical hackers simulate real-world attacks to exploit vulnerabilities in systems, networks, or applications. This type of testing is typically conducted within a specific timeframe and scope, allowing organizations to assess their security defenses and address any identified vulnerabilities promptly. On-demand penetration testing is particularly beneficial for organizations seeking targeted assessments or responding to specific security concerns."
 	},
 	{
-		"id": 3,
+		"_id": "6667bbee1a81ff5e9930ed5d",
 		"name": "Red Teaming Exercise",
-		"image": "https://i.ibb.co/rxMfZy2/hack.png"
+		"image": "https://i.ibb.co/rxMfZy2/hack.png",
+		"details": "Involves simulating sophisticated attacks to comprehensively test an organization's defense capabilities. This exercise goes beyond traditional penetration testing by assessing not only technical vulnerabilities but also the effectiveness of people, processes, and technology in detecting and responding to attacks. By emulating advanced threat actor behaviors, red teaming exercises provide valuable insights into an organization's security posture and readiness to defend against sophisticated cyber threats."
 	},
 	{
-		"id": 4,
+		"_id": "6667bbee1a81ff5e9930ed5e",
 		"name": "Red Team Adversarial Simulations",
-		"image": "https://i.ibb.co/ncdBr6P/hacker.png"
+		"image": "https://i.ibb.co/ncdBr6P/hacker.png",
+		"details": "Focus on specific adversarial tactics and scenarios to test an organization's defenses against targeted attacks. By simulating the tactics, techniques, and procedures (TTPs) of real-world threat actors, these simulations help organizations understand their susceptibility to advanced and persistent threats. Red team adversarial simulations enhance preparedness by identifying weaknesses in detection and response capabilities and informing improvements to security controls and incident response processes."
 	},
 	{
-		"id": 5,
+		"_id": "6667bbee1a81ff5e9930ed5f",
 		"name": "External Penetration Testing",
-		"image": "https://i.ibb.co/gd6Gx4C/cyber-attack.png"
+		"image": "https://i.ibb.co/gd6Gx4C/cyber-attack.png",
+		"details": "Assesses security from outside the organization's network perimeter. This type of testing targets internet-facing systems and services, such as web applications and external network infrastructure. By identifying vulnerabilities accessible to external attackers, external penetration testing helps organizations strengthen their external defenses and protect against cyber threats originating from outside the network perimeter."
 	},
 	{
-		"id": 6,
+		"_id": "6667bbee1a81ff5e9930ed60",
 		"name": "PenTesting as a Service",
-		"image": "https://i.ibb.co/PQt6Dn2/hacking.png"
-	},
-	{
-		"id": 7,
-		"name": "Internal Penetration Testing",
-		"image": "/public/assets/user-1.png"
-	},
-	{
-		"id": 8,
-		"name": "API Penetration Testing",
-		"image": "/public/assets/user-1.png"
-	},
-	{
-		"id": 9,
-		"name": "Network Penetration Testing",
-		"image": "/public/assets/user-1.png"
+		"image": "https://i.ibb.co/PQt6Dn2/hacking.png",
+		"details": "Provides ongoing penetration testing on a subscription basis. Unlike traditional penetration testing engagements, which are often conducted periodically, PenTesting_as_a_Service offers continuous monitoring and testing to maintain the organization's security posture. By identifying and addressing vulnerabilities on an ongoing basis, this service helps ensure readiness for evolving threats and compliance with regulatory requirements."
 	}
 ]
