@@ -6,6 +6,7 @@ export default {
 			colors: {
 				textPrimary: '#ED334A',
 				textSecondary: '#1778BC',
+				bgBlue: '#00203F',
 			},
 		},
 	},

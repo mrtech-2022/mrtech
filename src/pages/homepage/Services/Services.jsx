@@ -29,7 +29,7 @@ const Services = () => {
 
 	return (
 		<>
-			<SectionTitle title="Our Services" />
+			<SectionTitle title="Specialization" />
 			<div className="h-60 m-4 md:m-10 md:h-[470px] lg:h-[540px] relative overflow-hidden">
 				{/* arrow left */}
 				<button

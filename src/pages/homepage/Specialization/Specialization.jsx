@@ -13,7 +13,7 @@ const Specialization = () => {
 
 	return (
 		<div>
-			<SectionTitle title="Specialization" />
+			<SectionTitle title="Services" />
 			<p className="text-center m-8 md:m-16">
 				As a modern Information Security company, Beetles Cyber Security
 				combines a range of advanced services and technical resources to

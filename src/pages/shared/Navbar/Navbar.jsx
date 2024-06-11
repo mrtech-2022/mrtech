@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import Logo from '../../../../public/assets/MR-Tech2.png';
 import { Link } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
+import Logo from '../../../../public/assets/MR-Tech2.png';
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
 	const [openDropdown, setOpenDropdown] = useState(null);
-	const dropDownMenuRef = useRef();
+	const aboutRef = useRef(null);
+	const servicesRef = useRef(null);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 	const toggleDrawer = () => {
@@ -15,8 +17,10 @@ const NavBar = () => {
 	useEffect(() => {
 		const closeDropDown = e => {
 			if (
-				dropDownMenuRef.current &&
-				!dropDownMenuRef.current.contains(e.target)
+				aboutRef.current &&
+				!aboutRef.current.contains(e.target) &&
+				servicesRef.current &&
+				!servicesRef.current.contains(e.target)
 			) {
 				setOpenDropdown(null);
 			}
@@ -28,29 +32,27 @@ const NavBar = () => {
 	}, []);
 
 	const handleDropdownClick = menu => {
-		if (openDropdown === menu) {
-			setOpenDropdown(null);
-		} else {
-			setOpenDropdown(menu);
-		}
+		setOpenDropdown(openDropdown === menu ? null : menu);
 	};
 
 	const listing = (
 		<>
 			<li className="group flex cursor-pointer flex-col">
-				<Link smooth to="/">
+				<HashLink smooth to="/#home">
 					Home
-				</Link>
+				</HashLink>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li ref={dropDownMenuRef} className="relative group cursor-pointer">
+			<li ref={aboutRef} className="relative group cursor-pointer">
 				<button
 					onClick={() => handleDropdownClick('about')}
 					className="relative flex items-center gap-1"
 				>
 					<span>About</span>
 					<svg
-						className={`${openDropdown === 'about' ? '' : 'rotate-180'}`}
+						className={`transition-transform duration-300 ${
+							openDropdown === 'about' ? '' : 'rotate-180'
+						}`}
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
@@ -65,12 +67,15 @@ const NavBar = () => {
 					</svg>
 				</button>
 				{openDropdown === 'about' && (
-					<ul className="absolute transition-all duration-700 top-10 w-44 z-10 space-y-2 rounded-lg bg-white p-2 text-black">
+					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white p-2 text-black">
 						<li className="px-3 hover:text-textPrimary">
-							<Link href="#">About MR Tech</Link>
+							<Link to="/about-mrtech">About MR Tech</Link>
 						</li>
 						<li className="px-3 hover:text-textPrimary">
-							<Link href="#">MR Tech profile</Link>
+							<Link to="/team">Our Team</Link>
+						</li>
+						<li className="px-3 hover:text-textPrimary">
+							<Link to="/company-documents">Documents</Link>
 						</li>
 					</ul>
 				)}
@@ -80,15 +85,14 @@ const NavBar = () => {
 				<Link to="/projects">Projects</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-
-			<li ref={dropDownMenuRef} className="relative group cursor-pointer">
+			<li ref={servicesRef} className="relative group cursor-pointer">
 				<button
 					onClick={() => handleDropdownClick('services')}
 					className="relative flex items-center gap-1"
 				>
 					<span>Services</span>
 					<svg
-						className={`${
+						className={`transition-transform duration-300 ${
 							openDropdown === 'services' ? '' : 'rotate-180'
 						}`}
 						xmlns="http://www.w3.org/2000/svg"
@@ -105,28 +109,30 @@ const NavBar = () => {
 					</svg>
 				</button>
 				{openDropdown === 'services' && (
-					<ul className="absolute transition-all duration-700 top-10 z-10 space-y-2 rounded-lg bg-white p-2 text-black">
+					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white p-2 text-black">
 						<li className="px-3 hover:text-textPrimary">
-							<Link href="#">Transport</Link>
+							<Link to="/transport">Transport</Link>
 						</li>
 						<li className="px-3 hover:text-textPrimary">
-							<Link href="#">Management</Link>
+							<Link to="/management">Management</Link>
 						</li>
 					</ul>
 				)}
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-
 			<li className="group flex cursor-pointer flex-col">
-				<Link to="/projects">Gallery</Link>
+				<Link to="/gallery">Gallery</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 			<li className="group flex cursor-pointer flex-col">
-				<Link to="/contacts">Contacts</Link>
-				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary text-textPrimary transition-all duration-300 group-hover:w-full"></span>
+				<HashLink smooth to="/#contacts">
+					Contacts
+				</HashLink>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 		</>
 	);
+
 	return (
 		<nav className="fixed top-0 w-full p-4 h-[70px] z-50 bg-white">
 			<div className="flex justify-between mx-5 md:mx-10 items-center">
@@ -140,47 +146,30 @@ const NavBar = () => {
 						{listing}
 					</ul>
 				</div>
-
-				<div
-					ref={dropDownMenuRef}
-					onClick={() => setDropDownState(!dropDownState)}
-					className="md:hidden drawer"
-				>
-					<input
-						id="my-drawer"
-						type="checkbox"
-						className="drawer-toggle"
-						checked={isDrawerOpen}
-						onChange={toggleDrawer}
-					/>
-					<div className="flex justify-end drawer-content text-textSecondary">
-						{/* Page content here */}
-						<label
-							htmlFor="my-drawer"
-							className="drawer-button text-4xl font-bold"
+				<div className="md:hidden">
+					<button onClick={toggleDrawer} className="text-4xl font-bold">
+						<IoMenu />
+					</button>
+					{isDrawerOpen && (
+						<div
+							className="fixed inset-0 z-50 bg-black bg-opacity-50"
+							onClick={toggleDrawer}
 						>
-							<IoMenu />
-						</label>
-					</div>
-					<div className="drawer-side">
-						<label
-							htmlFor="my-drawer"
-							aria-label="close sidebar"
-							className="drawer-overlay"
-						></label>
-						<ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-							<button
-								className="flex justify-end font-bold text-xl"
-								onClick={toggleDrawer}
-							>
-								X
-							</button>
-							{listing}
-						</ul>
-					</div>
+							<div className="absolute top-0 right-0 w-80 bg-white p-4 h-full">
+								<button
+									className="flex justify-end font-bold text-xl"
+									onClick={toggleDrawer}
+								>
+									X
+								</button>
+								<ul className="mt-4">{listing}</ul>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>
 	);
 };
+
 export default NavBar;
