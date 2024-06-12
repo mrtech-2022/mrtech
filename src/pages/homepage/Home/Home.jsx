@@ -1,3 +1,4 @@
+import Footer from '../../shared/Footer/Footer';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Clients from '../Clients/Clients';
@@ -15,7 +16,7 @@ const Home = () => {
 			<Services />
 			<OurWorks />
 			<Clients />
-			<Contacts />
+			{/* <Contacts /> */}
 		</div>
 	);
 };

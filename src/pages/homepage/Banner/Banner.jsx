@@ -1,5 +1,6 @@
 import CountUp from 'react-countup';
 import IntroVideo from '../../../../public/assets/intro.mp4';
+import { HashLink } from 'react-router-hash-link';
 const Banner = () => {
 	return (
 		<div id="home" className="relative h-screen overflow-hidden">
@@ -23,21 +24,13 @@ const Banner = () => {
 							test of IT resilience, the best defence is a controlled
 							offense.
 						</p>
+						<HashLink smooth to="/#about">
+							<button className="bg-textPrimary p-3 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all">
+								Get Started
+							</button>
+						</HashLink>
 					</div>
-					<div className="-mb-32 m-auto  left-0 right-0 overflow-hidden text-textPrimary bottom-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-full gap-4 md:gap-8 place-items-end ">
-						<div className="relative m-3  border border-textPrimary p-4 flex flex-col justify-end items-center w-40 md:w-52">
-							<h1 className="text-5xl font-bold m-3">
-								<CountUp
-									// enableScrollSpy={true}
-									end={555}
-									duration={3}
-									delay={0.5}
-								></CountUp>
-							</h1>
-							<p className="absolute bottom-0 -mb-3 text-center bg-blue-950 px-7">
-								PenTests
-							</p>
-						</div>
+					<div className="-mb-32 m-auto  left-0 right-0 overflow-hidden text-textPrimary bottom-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-full gap-4 md:gap-8 place-items-end">
 						<div className="relative m-3  border border-textPrimary p-4 flex flex-col justify-end items-center w-40 md:w-52">
 							<h1 className="text-5xl font-bold m-3">
 								<CountUp

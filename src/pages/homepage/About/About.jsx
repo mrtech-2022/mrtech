@@ -5,7 +5,7 @@ import teamImg from '../../../../public/assets/team.jpg';
 
 const About = () => {
 	return (
-		<div className="w-full text-center">
+		<div id="about" className="w-full text-center">
 			<SectionTitle title="About Us" />
 			<p className="mx-3 md:max-w-[110ch] md:mx-auto">
 				We served security to someone's home, office, shop, restaurant or
