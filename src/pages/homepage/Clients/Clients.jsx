@@ -13,7 +13,6 @@ const Clients = () => {
 			return result.data;
 		},
 	});
-	console.log(clients);
 
 	return (
 		<div>

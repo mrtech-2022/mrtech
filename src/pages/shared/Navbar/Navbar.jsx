@@ -85,7 +85,13 @@ const NavBar = () => {
 				<Link to="/projects">Projects</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li ref={servicesRef} className="relative group cursor-pointer">
+			<li className="group flex cursor-pointer flex-col">
+				<HashLink smooth to="/#services">
+					Services
+				</HashLink>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
+			</li>
+			{/* <li ref={servicesRef} className="relative group cursor-pointer">
 				<button
 					onClick={() => handleDropdownClick('services')}
 					className="relative flex items-center gap-1"
@@ -119,13 +125,13 @@ const NavBar = () => {
 					</ul>
 				)}
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
-			</li>
+			</li> */}
 			<li className="group flex cursor-pointer flex-col">
 				<Link to="/gallery">Gallery</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 			<li className="group flex cursor-pointer flex-col">
-				<HashLink smooth to="/#contacts">
+				<HashLink smooth to="/contacts">
 					Contacts
 				</HashLink>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>

@@ -3,10 +3,12 @@ import CoverImg from '../../../../public/assets/Cover.png';
 import Camera1 from '../../../../public/assets/Camera1.jpg';
 import Camera2 from '../../../../public/assets/Camera2.jpg';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import useProjects from '../../../hooks/useProjects';
 
 const Services = () => {
 	const [currentSlider, setCurrentSlider] = useState(0);
 	const carouselImages = [CoverImg, Camera1, Camera2];
+	const [projects] = useProjects();
 	const prevSlider = () =>
 		setCurrentSlider(currentSlider =>
 			currentSlider === 0 ? carouselImages.length - 1 : currentSlider - 1
@@ -29,6 +31,14 @@ const Services = () => {
 
 	return (
 		<>
+			<div className="flex p-5 text-center text-4xl text-white m-20 mx-32 uppercase">
+				<div className="bg-textPrimary p-6 w-1/2">
+					2 years of Experience
+				</div>
+				<div className="bg-textSecondary p-6 w-1/2">
+					{projects.length}+ projects completed
+				</div>
+			</div>
 			<SectionTitle title="Specialization" />
 			<div className="h-60 m-4 md:m-10 md:h-[470px] lg:h-[540px] relative overflow-hidden">
 				{/* arrow left */}

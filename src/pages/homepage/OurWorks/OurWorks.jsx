@@ -13,7 +13,7 @@ const OurWorks = () => {
 			<SectionTitle title="Our Works" />
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-10 mx-16 md:mx-24">
 				{projects.slice(0, projectsToShow).map(work => (
-					<div key={work.id}>
+					<div key={work._id}>
 						<img src={work.image} alt="" />
 						<p className="font-bold text-center mt-3">{work.title}</p>
 					</div>

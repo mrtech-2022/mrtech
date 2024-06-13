@@ -58,10 +58,10 @@ const Contacts = () => {
 	};
 
 	return (
-		<>
+		<div>
 			<div
 				id="contacts"
-				className="bg-bgBlue grid md:grid-cols-3 my-16 place-items-center"
+				className="bg-bgBlue md:flex justify-center gap-20  my-16 place-items-center"
 			>
 				<div className="bg-bgBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
 					<h1 className="text-5xl text-textPrimary text-center my-6 font-serif">
@@ -166,32 +166,15 @@ const Contacts = () => {
 						</button>
 					</form>
 				</div>
-				<div className="text-textPrimary p-6">
-					<h1 className="text-2xl mb-3">QUICK LINKS</h1>
-					<ul>
-						<li className="text-gray-300 underline p-1 mb-2 hover:text-gray-100">
-							<Link to="/about-mrtech">About US</Link>
-						</li>
-						<li className="text-gray-300 underline p-1 mb-2 hover:text-gray-100">
-							<Link to="/about-mrtech">Company Documents</Link>
-						</li>
-						<li className="text-gray-300 underline p-1 mb-2 hover:text-gray-100">
-							<Link to="/about-mrtech">The Team</Link>
-						</li>
-					</ul>
-				</div>
-				<div className="text-textPrimary">
-					<div className="flex items-center gap-3 text-3xl mb-4">
-						<FaHome />
-						<h1>Registered HQ</h1>
-					</div>
-					<p className="text-gray-300 ml-2">
-						Evercare Hospital Link Road <br />
-						(Beside Bashundhara), Vatara, Dhaka-1212
-					</p>
+				<div>
+					<img
+						className="w-96 hidden md:block"
+						src="https://i.ibb.co/BTp5rL4/contact.jpg"
+						alt="Contact "
+					/>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

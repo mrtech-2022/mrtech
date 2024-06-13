@@ -1,18 +1,19 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useSpecializationData from '../../../hooks/useSpecializationData';
+import { Link } from 'react-router-dom';
 
 const Specialization = () => {
 	const [specialization] = useSpecializationData();
-	const [selectedSpecialization, setSelectedSpecialization] = useState(null);
+	// const [selectedSpecialization, setSelectedSpecialization] = useState(null);
 
-	const handleSpecializationClick = data => {
-		setSelectedSpecialization(data);
-		document.getElementById('data-modal').showModal();
-	};
+	// const handleSpecializationClick = data => {
+	// 	setSelectedSpecialization(data);
+	// 	document.getElementById('data-modal').showModal();
+	// };
 
 	return (
-		<div>
+		<div id="services">
 			<SectionTitle title="Services" />
 			<p className="text-center m-8 md:m-16">
 				As a modern Information Security company, Beetles Cyber Security
@@ -23,22 +24,22 @@ const Specialization = () => {
 			<div className="grid grid-cols-2 lg:grid-cols-3 items-center mx-4 gap-12">
 				{specialization.map(data => (
 					<div
-						className="flex flex-col items-center text-center hover:text-textPrimary"
+						className="flex flex-col items-center text-center"
 						key={data._id}
-						onClick={() => handleSpecializationClick(data)}
 					>
-						<img
-							className="w-20 mb-2 cursor-pointer"
-							src={data.image}
-							alt="Service"
-						/>
-						<p className="cursor-pointer">{data.name}</p>
+						<img className="w-20 mb-2" src={data.image} alt="Service" />
+						<p className="font-semibold">{data.name}</p>
+						<Link to={`/service-details/${data._id}`}>
+							<button className="bg-textSecondary text-white p-2 m-3 hover:bg-black hover:transition-all ">
+								More Details
+							</button>
+						</Link>
 					</div>
 				))}
 			</div>
 
 			{/* Modal Data */}
-			<dialog id="data-modal" className="modal">
+			{/* <dialog id="data-modal" className="modal">
 				{selectedSpecialization && (
 					<div className="modal-box">
 						<h3 className="font-bold text-lg">
@@ -56,7 +57,7 @@ const Specialization = () => {
 				<form method="dialog" className="modal-backdrop">
 					<button>Close</button>
 				</form>
-			</dialog>
+			</dialog> */}
 		</div>
 	);
 };

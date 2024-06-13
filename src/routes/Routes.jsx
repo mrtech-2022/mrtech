@@ -4,6 +4,9 @@ import Home from '../pages/homepage/Home/Home';
 import AboutCompany from '../pages/otherPage/AboutCompany/AboutCompany';
 import OurWorks from '../pages/homepage/OurWorks/OurWorks';
 import Team from '../pages/otherPage/Team/Team';
+import Contacts from '../pages/homepage/Contacts/Contacts';
+import Documents from '../pages/otherPage/Documents/Documents';
+import ServiceDetails from '../pages/otherPage/ServiceDetails/ServiceDetails';
 
 const router = createBrowserRouter([
 	{
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
 			{
 				path: 'team',
 				element: <Team />,
+			},
+			{
+				path: 'contacts',
+				element: <Contacts />,
+			},
+			{
+				path: 'company-documents',
+				element: <Documents />,
+			},
+			{
+				path: 'service-details/:id',
+				element: <ServiceDetails />,
 			},
 		],
 	},
