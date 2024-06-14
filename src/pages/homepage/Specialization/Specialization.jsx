@@ -1,15 +1,15 @@
 // import { useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import useSpecializationData from '../../../hooks/useSpecializationData';
+import useServices from '../../../hooks/useServices';
 import { Link } from 'react-router-dom';
 
 const Specialization = () => {
-	const [specialization] = useSpecializationData();
+	const [services] = useServices();
 	// const [selectedSpecialization, setSelectedSpecialization] = useState(null);
 
-	// const handleSpecializationClick = data => {
-	// 	setSelectedSpecialization(data);
-	// 	document.getElementById('data-modal').showModal();
+	// const handleSpecializationClick = service => {
+	// 	setSelectedSpecialization(service);
+	// 	document.getElementById('service-modal').showModal();
 	// };
 
 	return (
@@ -22,14 +22,18 @@ const Specialization = () => {
 			</p>
 
 			<div className="grid grid-cols-2 lg:grid-cols-3 items-center mx-4 gap-12">
-				{specialization.map(data => (
+				{services.map(service => (
 					<div
 						className="flex flex-col items-center text-center"
-						key={data._id}
+						key={service._id}
 					>
-						<img className="w-20 mb-2" src={data.image} alt="Service" />
-						<p className="font-semibold">{data.name}</p>
-						<Link to={`/service-details/${data._id}`}>
+						<img
+							className="w-20 mb-2"
+							src={service.image}
+							alt="Service"
+						/>
+						<p className="font-semibold">{service.name}</p>
+						<Link to={`/service-details/${service._id}`}>
 							<button className="bg-textSecondary text-white p-2 m-3 hover:bg-black hover:transition-all ">
 								More Details
 							</button>
@@ -38,8 +42,8 @@ const Specialization = () => {
 				))}
 			</div>
 
-			{/* Modal Data */}
-			{/* <dialog id="data-modal" className="modal">
+			{/* Modal service */}
+			{/* <dialog id="service-modal" className="modal">
 				{selectedSpecialization && (
 					<div className="modal-box">
 						<h3 className="font-bold text-lg">

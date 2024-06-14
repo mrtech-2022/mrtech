@@ -31,11 +31,11 @@ const Services = () => {
 
 	return (
 		<>
-			<div className="flex p-5 text-center text-4xl text-white m-20 mx-32 uppercase">
-				<div className="bg-textPrimary p-6 w-1/2">
+			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 my-20 xl:my-32 xl:mx-32 uppercase">
+				<div className="bg-textPrimary p-6 md:w-1/2">
 					2 years of Experience
 				</div>
-				<div className="bg-textSecondary p-6 w-1/2">
+				<div className="bg-textSecondary p-6 md:w-1/2">
 					{projects.length}+ projects completed
 				</div>
 			</div>
