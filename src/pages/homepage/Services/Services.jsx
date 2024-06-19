@@ -7,8 +7,8 @@ import useProjects from '../../../hooks/useProjects';
 
 const Services = () => {
 	const [currentSlider, setCurrentSlider] = useState(0);
-	const carouselImages = [CoverImg, Camera1, Camera2];
 	const [projects] = useProjects();
+	const carouselImages = [CoverImg, Camera1, Camera2];
 	const prevSlider = () =>
 		setCurrentSlider(currentSlider =>
 			currentSlider === 0 ? carouselImages.length - 1 : currentSlider - 1
@@ -31,14 +31,6 @@ const Services = () => {
 
 	return (
 		<>
-			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 my-20 xl:my-32 xl:mx-32 uppercase">
-				<div className="bg-textPrimary p-6 md:w-1/2">
-					2 years of Experience
-				</div>
-				<div className="bg-textSecondary p-6 md:w-1/2">
-					{projects.length}+ projects completed
-				</div>
-			</div>
 			<SectionTitle title="Specialization" />
 			<div className="h-60 m-4 md:m-10 md:h-[470px] lg:h-[540px] relative overflow-hidden">
 				{/* arrow left */}
@@ -118,6 +110,14 @@ const Services = () => {
 							alt={`Slider - ${index + 1}`}
 						/>
 					))}
+				</div>
+			</div>
+			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 my-20 xl:my-32 xl:mx-32 uppercase">
+				<div className="bg-textPrimary p-6 md:w-1/2">
+					2 years of Experience
+				</div>
+				<div className="bg-textSecondary p-6 md:w-1/2">
+					{projects.length}+ projects completed
 				</div>
 			</div>
 		</>

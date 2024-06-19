@@ -83,7 +83,8 @@ const ServiceDetails = () => {
 					onClick={() => setOpenModal(false)}
 					className={`fixed z-[100] flex items-center justify-center ${
 						openModal ? 'opacity-1 visible' : 'invisible opacity-0'
-					} inset-0 h-full w-full bg-black/20 backdrop-blur-sm duration-100`}
+					} inset-0 h-full w-full bg-black/20 backdrop-blur-sm duration-100 
+					 overflow-y-auto`}
 				>
 					<div
 						onClick={e_ => e_.stopPropagation()}
@@ -99,7 +100,7 @@ const ServiceDetails = () => {
 							className="p-12"
 						>
 							<div className="flex justify-between ">
-								<h1 className="backdrop-blur-sm text-4xl pb-8 font-bold">
+								<h1 className="backdrop-blur-sm text-3xl pb-8 font-bold">
 									Request This Service
 								</h1>
 								<h1
@@ -161,13 +162,13 @@ const ServiceDetails = () => {
 									Details
 								</label>
 								<div className="relative">
-									<input
+									<textarea
 										name="details"
 										id="details"
 										required
 										type="text"
 										placeholder="Details About Your Service"
-										className="p-3 block w-full drop-shadow-lg  border-4 outline-none"
+										className="p-3 block w-full drop-shadow-lg  border-4 outline-none h-24"
 									/>
 								</div>
 							</div>

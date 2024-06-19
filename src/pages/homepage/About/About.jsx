@@ -7,50 +7,53 @@ const About = () => {
 	return (
 		<div id="about" className="w-full text-center">
 			<SectionTitle title="About Us" />
-			<p className="mx-3 md:max-w-[110ch] md:mx-auto">
-				We served security to someone's home, office, shop, restaurant or
-				other places by CCTV camera to protect from corruption. We also have
-				some IT section for. The bigger weapon now is not a gun, but a
-				keyboard. From malicious codes to Trojans to phishing and organized
-				crimes (data theft, DoS, DDoS) are the new threats we face every
-				day.
+			<p className="text-justify mx-4 md:mx-16">
+				MR Tech is a Simple and customized IT Company (Networking, CCTV,
+				Surveillance, Access Control, Fire Alarm System, Intruder Alarm
+				System, Smart Education System and Products) Service provider In
+				Bangladesh, with a far-reaching vision of adding values to society
+				and industry we operate in. Most of our solutions are backed up by
+				years of market experience and client demand. MT Tech understand
+				their customer’s requirements and satisfy them by providing unique
+				solutions specifically tailored to individual customer’s need and
+				also enables us to provide unparalleled after-sale service.
 			</p>
 
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center mt-20 mx-5 lg:w-11/12 xl:w-10/12 mx-auto">
 				{/* Card-1 */}
-				<div className="card card-compact w-80 bg-base-100 rounded-md shadow-xl">
+				<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl">
 					<figure className="h-48">
 						<img src={networkImg} alt="Network" />
 					</figure>
 					<div className="card-body">
-						<h2 className="card-title mx-auto font-bold">CrowdSpark</h2>
+						<h2 className="card-title mx-auto font-bold">
+							Highest Standards
+						</h2>
 						<p className="mb-10 text-justify">
-							CrowdSpark is a proprietary engagement management
-							application that provides our clients with a one-stop
-							dashboard for all vital data.
+							We always ensure the highest standard solution and with the
+							quality product.
 						</p>
 					</div>
 				</div>
 
 				{/* Card-2 */}
-				<div className="card card-compact w-80 bg-base-100 rounded-md shadow-xl">
+				<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl">
 					<figure className="h-48">
 						<img src={peopleImg} alt="Network" />
 					</figure>
 					<div className="card-body">
 						<h2 className="card-title mx-auto font-bold">
-							WFH Security Assessment
+							Creative Solutions
 						</h2>
 						<p className="text-justify mb-10">
-							Assess the security of your remote working solution,
-							ensuring that configuration issues are not exposing your
-							corporate data and systems to unauthorized users.
+							MR Tech always finds the creative solutions for customer
+							satisfaction.
 						</p>
 					</div>
 				</div>
 
 				{/* Card-2 */}
-				<div className="card card-compact w-80 bg-base-100 rounded-md shadow-xl">
+				<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl">
 					<figure className="h-48">
 						<img src={teamImg} alt="Network" />
 					</figure>

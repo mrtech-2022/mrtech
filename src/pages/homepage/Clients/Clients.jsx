@@ -1,18 +1,11 @@
 import Marquee from 'react-fast-marquee';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import { useQuery } from '@tanstack/react-query';
-import useAxiosPublic from '../../../hooks/useAxiosPublic';
+
 import './clients.css';
+import useClients from '../../../hooks/useClients';
 
 const Clients = () => {
-	const axiosPublic = useAxiosPublic();
-	const { data: clients = [] } = useQuery({
-		queryKey: ['clients'],
-		queryFn: async () => {
-			const result = await axiosPublic.get('/clients');
-			return result.data;
-		},
-	});
+	const [clients] = useClients();
 
 	return (
 		<div>

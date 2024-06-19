@@ -1,7 +1,13 @@
 import CountUp from 'react-countup';
 import IntroVideo from '../../../../public/assets/intro.mp4';
 import { HashLink } from 'react-router-hash-link';
+import useServices from '../../../hooks/useServices';
+import useClients from '../../../hooks/useClients';
+import useProjects from '../../../hooks/useProjects';
 const Banner = () => {
+	const [services] = useServices();
+	const [clients] = useClients();
+	const [projects] = useProjects();
 	return (
 		<div id="home" className="relative h-screen overflow-hidden">
 			<video
@@ -35,33 +41,33 @@ const Banner = () => {
 							<h1 className="text-5xl font-bold m-3">
 								<CountUp
 									// enableScrollSpy={true}
-									end={300}
+									end={services.length}
 									duration={3}
 									delay={0.5}
 								></CountUp>
 							</h1>
 							<p className="absolute bottom-0 -mb-3 text-center bg-blue-950 px-4">
-								Bug Found
+								Services
 							</p>
 						</div>
 						<div className="relative m-3  border border-textPrimary p-4 flex flex-col justify-end items-center w-40 md:w-52">
 							<h1 className="text-5xl font-bold m-3">
 								<CountUp
 									// enableScrollSpy={true}
-									end={105}
+									end={clients.length}
 									duration={3}
 									delay={0.5}
 								></CountUp>
 							</h1>
 							<p className="absolute bottom-0 -mb-3 text-center bg-blue-950 px-4">
-								Clients Served
+								Clients
 							</p>
 						</div>
 						<div className="relative m-3  border border-textPrimary p-4 flex flex-col justify-end items-center w-40 md:w-52">
 							<h1 className="text-5xl font-bold m-3">
 								<CountUp
 									// enableScrollSpy={true}
-									end={5}
+									end={projects.length}
 									duration={3}
 									delay={0.5}
 								></CountUp>
