@@ -6,9 +6,10 @@ import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
 	const [openDropdown, setOpenDropdown] = useState(null);
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 	const aboutRef = useRef(null);
 	const servicesRef = useRef(null);
-	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 	const toggleDrawer = () => {
 		setIsDrawerOpen(!isDrawerOpen);
@@ -28,6 +29,21 @@ const NavBar = () => {
 		document.addEventListener('mousedown', closeDropDown);
 		return () => {
 			document.removeEventListener('mousedown', closeDropDown);
+		};
+	}, []);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 50) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
@@ -67,7 +83,7 @@ const NavBar = () => {
 					</svg>
 				</button>
 				{openDropdown === 'about' && (
-					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white p-2 text-black">
+					<ul className="absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 text-black">
 						<li className="px-3 hover:text-textPrimary">
 							<Link to="/about-mrtech">About MR Tech</Link>
 						</li>
@@ -140,7 +156,11 @@ const NavBar = () => {
 	);
 
 	return (
-		<nav className="fixed top-0 w-full p-4 h-[70px] z-50 bg-white">
+		<nav
+			className={`fixed top-0 w-full p-4 h-[70px] z-50 transition-all transform ${
+				isScrolled ? 'bg-white' : 'bg-transparent'
+			}`}
+		>
 			<div className="flex justify-between mx-5 md:mx-10 items-center">
 				<div>
 					<Link to="/">

@@ -61,7 +61,7 @@ const Contacts = () => {
 		<div>
 			<div
 				id="contacts"
-				className="bg-bgBlue md:flex justify-center gap-20  my-16 place-items-center"
+				className="bg-bgBlue md:flex justify-center gap-20  h-screen place-items-center"
 			>
 				<div className="bg-bgBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
 					<h1 className="text-5xl text-textPrimary text-center my-6 font-serif">

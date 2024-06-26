@@ -11,7 +11,7 @@ const Footer = () => {
 	return (
 		<footer
 			id="contacts"
-			className="bg-black grid md:grid-cols-3 mt-16 p-6 px-16 justify-items-center"
+			className="bg-black grid md:grid-cols-3 p-6 px-16 justify-items-center"
 		>
 			<div>
 				<img
@@ -25,9 +25,9 @@ const Footer = () => {
 							About MR TECH
 						</div>
 					</Link>
-					<Link to="/about-mrtech">
+					<Link to="/contacts">
 						<div className="bg-white w-1/2 p-3 rounded-md text-red-500 font-bold hover:bg-red-500 hover:text-white transition-all">
-							About MR TECH
+							Contact Us
 						</div>
 					</Link>
 				</div>

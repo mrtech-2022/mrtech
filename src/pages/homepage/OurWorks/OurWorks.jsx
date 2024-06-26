@@ -9,7 +9,7 @@ const OurWorks = () => {
 	const projectsToShow = showAll ? showAll.length : 4;
 
 	return (
-		<div>
+		<div className="h-screen">
 			<SectionTitle title="Our Works" />
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-10 mx-16 md:mx-24">
 				{projects.slice(0, projectsToShow).map(work => (
