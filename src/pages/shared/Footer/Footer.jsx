@@ -3,52 +3,57 @@ import {
 	FaFacebookSquare,
 	FaHome,
 	FaInstagram,
+	FaInstagramSquare,
 	FaLinkedin,
+	FaTwitter,
 } from 'react-icons/fa';
+import { FaSquareXTwitter, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
 		<footer
 			id="contacts"
-			className="bg-black grid md:grid-cols-3 p-6 px-16 justify-items-center"
+			className="bg-black grid md:grid-cols-3 p-6 px-16 justify-items-center mt-5"
 		>
-			<div>
+			<div className="flex flex-col justify-center ">
 				<img
-					className="w-1/3 "
+					className="w-1/4 ml-5"
 					src="https://i.ibb.co/B3G283b/MR-Tech2.png"
 					alt="MR Tech"
 				/>
-				<div className="flex flex-col gap-4 my-4">
-					<Link to="/about-mrtech">
-						<div className="bg-white w-1/2 p-3 rounded-md text-red-500 font-bold hover:bg-red-500 hover:text-white transition-all">
-							About MR TECH
-						</div>
-					</Link>
+				<div className="flex flex-col gap-4 my-4 ">
 					<Link to="/contacts">
-						<div className="bg-white w-1/2 p-3 rounded-md text-red-500 font-bold hover:bg-red-500 hover:text-white transition-all">
-							Contact Us
+						<div className="bg-white w-1/3 p-3 rounded-md text-red-500 font-bold hover:bg-red-500 hover:text-white transition-all text-center">
+							Privacy Policy
 						</div>
 					</Link>
 				</div>
 				<div className="flex gap-2">
 					<a
-						className="text-textSecondary text-4xl"
+						className="text-textSecondary text-2xl"
 						href="https://www.facebook.com/mrtech.bd2022"
 						target="blank"
 					>
 						<FaFacebookSquare />
 					</a>
-
 					<a
-						className="text-textPrimary text-4xl"
+						className="text-textPrimary text-2xl"
 						href="https://www.facebook.com/mrtech.bd2022"
 						target="blank"
 					>
-						<FaInstagram />
+						<FaInstagramSquare />
+					</a>
+
+					<a
+						className="text-white text-2xl"
+						href="https://www.facebook.com/mrtech.bd2022"
+						target="blank"
+					>
+						<FaSquareXTwitter />
 					</a>
 					<a
-						className="text-textSecondary text-4xl"
+						className="text-textSecondary text-2xl"
 						href="https://www.facebook.com/mrtech.bd2022"
 						target="blank"
 					>
@@ -90,7 +95,7 @@ const Footer = () => {
 					<FaHome />
 					<h1>Registered Office</h1>
 				</div>
-				<p className="text-gray-300 ml-2">
+				<p className="text-gray-300 ml-11">
 					Evercare Hospital Link Road <br />
 					(Beside Bashundhara), Vatara, Dhaka-1212
 				</p>

@@ -1,8 +1,6 @@
 import { Bounce, toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
 
 const Contacts = () => {
 	const formValue = useRef();
@@ -58,10 +56,10 @@ const Contacts = () => {
 	};
 
 	return (
-		<div>
+		<div className="-mb-5">
 			<div
 				id="contacts"
-				className="bg-bgBlue md:flex justify-center gap-20  h-screen place-items-center"
+				className="bg-bgBlue flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
 			>
 				<div className="bg-bgBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
 					<h1 className="text-5xl text-textPrimary text-center my-6 font-serif">
@@ -166,14 +164,27 @@ const Contacts = () => {
 						</button>
 					</form>
 				</div>
-				<div>
+				{/* <div>
 					<img
 						className="w-96 hidden md:block"
 						src="https://i.ibb.co/BTp5rL4/contact.jpg"
 						alt="Contact "
 					/>
+				</div> */}
+				<div>
+					<iframe
+						className="w-96 p-2 sm:w-[450px] md:w-[500px] lg:w-[600px] h-72"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.9846217854624!2d90.45004731083874!3d23.819145878534467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c984540003c7%3A0xc604635ad494a2bb!2sApollo%20Hospital!5e0!3m2!1sen!2sbd!4v1719655151410!5m2!1sen!2sbd"
+						allowfullscreen=""
+						loading="lazy"
+					></iframe>
 				</div>
 			</div>
+			<img
+				className="w-full"
+				src="https://i.ibb.co/D8TgQ61/connection.jpg"
+				alt=""
+			/>
 		</div>
 	);
 };

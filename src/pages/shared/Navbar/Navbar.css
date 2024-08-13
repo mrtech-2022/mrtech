@@ -1,0 +1,20 @@
+/* Base styling */
+.navbar-item {
+  position: relative;
+}
+
+/* Hide the dropdown by default */
+.navbar-item .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  z-index: 10;
+}
+
+/* Show the dropdown when hovering over the button or dropdown */
+.navbar-item:hover .dropdown-content {
+  display: block;
+}

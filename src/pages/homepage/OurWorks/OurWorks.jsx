@@ -9,8 +9,16 @@ const OurWorks = () => {
 	const projectsToShow = showAll ? showAll.length : 4;
 
 	return (
-		<div className="h-screen">
-			<SectionTitle title="Our Works" />
+		<div>
+			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 mt-20 uppercase">
+				<div className="bg-textPrimary p-6 md:w-1/2">
+					02 years of Experience
+				</div>
+				<div className="bg-textSecondary p-6 md:w-1/2">
+					0{projects.length}+ projects completed
+				</div>
+			</div>
+			<SectionTitle title="Explore Recent Work" />
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-10 mx-16 md:mx-24">
 				{projects.slice(0, projectsToShow).map(work => (
 					<div key={work._id}>
@@ -19,9 +27,9 @@ const OurWorks = () => {
 					</div>
 				))}
 			</div>
-			<div className="flex justify-center mt-4">
+			<div className="flex justify-center mt-4 ">
 				<button
-					className="btn bg-textSecondary text-white hover:bg-blue-700"
+					className="btn bg-textSecondary text-white hover:bg-blue-700 mb-16"
 					onClick={() => setShowAll(!showAll)}
 				>
 					{showAll ? 'Hide Some Projects' : 'Show All Projects'}

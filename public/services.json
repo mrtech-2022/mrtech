@@ -1,0 +1,56 @@
+[
+	{
+		"name": "CCTV Surveillance System Setup/Service",
+		"image": "...",
+		"image2": "coming",
+		"details": [
+			"To protect against theft, burglaries, and dishonest employees.",
+			"To protect the perimeter of the property or the perimeter of buildings.",
+			"For crowd control as well as crime prevention.",
+			"Routinely used for city streets, parks, communities, and neighborhoods to help deter crime and enhance public safety.",
+			"Commonly used to improve the flow of traffic and monitor for accidents.",
+			"To protect assets."
+		]
+	},
+	{
+		"name": "Computer Setup & Service",
+		"image": "...",
+		"image2": "coming",
+		"details": [
+			"   Computer Setup & Repair Service",
+			"Operating System Installation Windows, macOS, Linux",
+			"Data Recovery, Transfer, Backup",
+			"Computer Diagnosis",
+			"Software Installation and Troubleshooting",
+			"Virus, Spyware, and Malware Removal",
+			"Printer, Scanner Installation and Troubleshooting",
+			"Computer Lab Setup",
+			"IT Product Sales and Maintenance Services"
+		]
+	},
+	{
+		"name": "Laptop Service",
+		"image": "...",
+		"image2": "coming",
+		"details": [
+			"Laptop Repair Service",
+			"Operating System Installation Windows, macOS, Linux",
+			"Data Recovery, Transfer, Backup",
+			"Laptop Diagnosis",
+			"Software Installation and Troubleshooting",
+			"Virus, Spyware, and Malware Removal",
+			"Laptop Lab Setup"
+		]
+	},
+	{
+		"name": "Mobile Service",
+		"image": "...",
+		"image2": "coming",
+		"details": [
+			"Mobile Repair Service",
+			"Data Recovery, Transfer, Backup",
+			"Mobile Diagnosis",
+			"IT Product Sales and Maintenance Services"
+		]
+	}
+]

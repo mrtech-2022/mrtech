@@ -1,5 +1,6 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Team = () => {
 	return (
@@ -7,22 +8,20 @@ const Team = () => {
 			<SectionTitle title="Our Team" />
 			<div className="text-center mx-16">
 				<p>
-					Led by a dynamic team with a wide array of expertise and
-					experience, both internationally and domestically, our security
-					professionals and technical support team provides on-site and
-					off-site, 24.7.365 service, committed to the client’s total
-					satisfaction.
+					We celebrate diversity as our strength and believe in creating an
+					inclusive environment for all. Discrimination has no place here;
+					we're united in valuing each individual's unique contributions.
 				</p>
 			</div>
 			{/* Owner information */}
 			<div className="m-8 ml-12 my-32">
 				<h1 className="text-5xl font-bold border-l-[13px]  border-textSecondary p-3">
-					OWNER & CEO
+					Management Team
 				</h1>
-				<div className="flex flex-col items-center justify-center md:flex-row my-10">
+				<div className="flex flex-col items-center  md:flex-row my-10">
 					<div className="group relative ">
 						<img
-							className=" scale-105 transform rounded-lg bg-black/70"
+							className="scale-105 transform rounded-lg bg-black/70 w-[300px]"
 							src="https://i.ibb.co/Ht13Dy6/2-2.jpg"
 							alt="card ui"
 						/>
@@ -70,17 +69,17 @@ const Team = () => {
 								Masudur Rahman
 							</h2>
 							<p className="font-sans text-gray-500 dark:text-white/70">
-								@masudur
+								Founder & CEO
 							</p>
 						</div>
 						<div className="flex flex-wrap items-center justify-between">
 							<div className="space-y-1">
 								<a
-									href="https://www.facebook.com/MasudurRahman.me"
+									href="https://x.com/MasudurRahmanMe"
 									target="blank"
 									className=" tracking-wider text-gray-700 dark:text-white/80 text-4xl hover:text-[#0d87f8] transition transform "
 								>
-									<FaFacebook />
+									<FaXTwitter />
 								</a>
 							</div>
 							<div className="space-y-1">
@@ -103,7 +102,7 @@ const Team = () => {
 							</div>
 						</div>
 						<div>
-							<a href="https://wa.me/01540251110" target="blank">
+							<a href="https://wa.me/01531946491" target="blank">
 								<button className="rounded-full border border-emerald-500 px-4 py-2 text-sm text-emerald-500 hover:bg-emerald-500 hover:text-white  duration-300 dark:hover:bg-transparent dark:hover:bg-emerald-500 dark:hover:drop-shadow-[0px_0px_2px_#0d87f8] hover:">
 									Send WhatsApp Message
 								</button>
@@ -118,7 +117,7 @@ const Team = () => {
 				<h1 className="text-5xl font-bold border-l-[13px] border-textSecondary p-3">
 					Developer Team
 				</h1>
-				<div className="flex flex-col items-center justify-center md:flex-row-reverse my-10">
+				<div className="flex flex-col items-center md:flex-row-reverse justify-end my-10">
 					<div className="group relative w-[320px] md:w-[330px]">
 						<img
 							className=" scale-105 transform rounded-lg bg-black/70"
@@ -169,7 +168,7 @@ const Team = () => {
 								Md. Al-Amin
 							</h2>
 							<p className="font-sans text-gray-500 dark:text-white/70">
-								@al_amin175
+								Head OF Developer
 							</p>
 						</div>
 						<div className="flex flex-wrap items-center justify-between">

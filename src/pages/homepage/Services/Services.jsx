@@ -85,6 +85,7 @@ const Services = () => {
 					</svg>
 				</button>
 				{/* dots */}
+
 				<div className="flex justify-center items-center rounded-full z-50 absolute bottom-4 w-full gap-1">
 					{carouselImages.map((_, inx) => (
 						<button
@@ -96,12 +97,12 @@ const Services = () => {
 						></button>
 					))}
 				</div>
-				{/* Carousel container */}
+				{/* Carousel Container */}
 				<div
 					className="ease-linear duration-500 flex transform-gpu"
 					style={{ transform: `translateX(-${currentSlider * 100}%)` }}
 				>
-					{/* sliders */}
+					{/* Sliders */}
 					{carouselImages.map((slide, index) => (
 						<img
 							key={slide}
@@ -110,14 +111,6 @@ const Services = () => {
 							alt={`Slider - ${index + 1}`}
 						/>
 					))}
-				</div>
-			</div>
-			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 my-20 xl:my-32 xl:mx-32 uppercase">
-				<div className="bg-textPrimary p-6 md:w-1/2">
-					2 years of Experience
-				</div>
-				<div className="bg-textSecondary p-6 md:w-1/2">
-					{projects.length}+ projects completed
 				</div>
 			</div>
 		</>

@@ -7,7 +7,7 @@ const About = () => {
 	return (
 		<div id="about" className="w-full text-center">
 			<SectionTitle title="About Us" />
-			<p className="text-justify mx-4 md:mx-16">
+			<p className="mx-4 md:mx-16">
 				MR Tech is a Simple and customized IT Company (Networking, CCTV,
 				Surveillance, Access Control, Fire Alarm System, Intruder Alarm
 				System, Smart Education System and Products) Service provider In

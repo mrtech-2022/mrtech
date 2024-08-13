@@ -10,10 +10,9 @@ const Specialization = () => {
 			<div id="services">
 				<SectionTitle title="Services" />
 				<p className="text-center m-8 md:m-16">
-					As a modern Information Security company, Beetles Cyber Security
-					combines a range of advanced services and technical resources to
-					provide your business with the level of solution support it
-					needs.
+					As a modern Information Security company, MR Tech combines a
+					range of advanced services and technical resources to provide
+					your business with the level of solution support it needs.
 				</p>
 
 				<div className="grid grid-cols-2 lg:grid-cols-3 items-center mx-4 gap-12">
