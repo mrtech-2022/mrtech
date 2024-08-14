@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
-import Logo from '../../../../public/assets/MR-Tech2.png';
+import Logo from '/assets/MR-Tech2.png';
 import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import './Navbar.css'

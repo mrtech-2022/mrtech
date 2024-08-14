@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import CoverImg from '../../../../public/assets/Cover.png';
-import Camera1 from '../../../../public/assets/Camera1.jpg';
-import Camera2 from '../../../../public/assets/Camera2.jpg';
+import CoverImg from '/assets/Cover.png';
+import Camera1 from '/assets/Camera1.jpg';
+import Camera2 from '/assets/Camera2.jpg';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useProjects from '../../../hooks/useProjects';
 

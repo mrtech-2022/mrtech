@@ -1,5 +1,5 @@
 import CountUp from 'react-countup';
-import IntroVideo from '../../../../public/assets/intro.mp4';
+import IntroVideo from '/assets/intro.mp4';
 import { HashLink } from 'react-router-hash-link';
 import useServices from '../../../hooks/useServices';
 import useClients from '../../../hooks/useClients';

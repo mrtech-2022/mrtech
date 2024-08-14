@@ -1,7 +1,7 @@
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import networkImg from '../../../../public/assets/network.jpg';
-import peopleImg from '../../../../public/assets/people.jpg';
-import teamImg from '../../../../public/assets/team.jpg';
+import networkImg from '/assets/network.jpg';
+import peopleImg from '/assets/people.jpg';
+import teamImg from '/assets/team.jpg';
 
 const About = () => {
 	return (
