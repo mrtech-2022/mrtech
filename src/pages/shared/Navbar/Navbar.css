@@ -12,6 +12,7 @@
   background-color: white;
   min-width: 200px;
   z-index: 10;
+  /* width: 100%; */
 }
 
 /* Show the dropdown when hovering over the button or dropdown */

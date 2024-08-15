@@ -30,7 +30,7 @@ const NavBar = () => {
 
 	const listing = (
 		<>
-			<li className="group flex cursor-pointer flex-col ">
+			<li className="group flex cursor-pointer flex-col " onClick={toggleDrawer}>
 				<HashLink smooth to="/#home">
 					Home
 				</HashLink>
@@ -52,23 +52,23 @@ const NavBar = () => {
 						strokeLinecap="round"
 						strokeLinejoin="round"
 					>
-						<path d="m18 15-6-6-6 6" />
+						<path d="M6 9l6 6 6-6" />
 					</svg>
 				</button>
-				<ul className="dropdown-content uppercase space-y-2 rounded-lg bg-white p-2 text-black">
-					<li className="px-3 hover:text-textPrimary">
+				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-24 md:ml-8 text-black">
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/about-mrtech">About US</Link>
 					</li>
-					<li className="px-3 hover:text-textPrimary">
-						<Link to="/team">Our Team</Link>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/team">Our Team</Link >
 					</li>
-					<li className="px-3 hover:text-textPrimary">
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/company-documents">Company Documents</Link>
 					</li>
 				</ul>
 			</li>
 
-			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary">
+			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={toggleDrawer}>
 				<HashLink smooth to="/#services">
 					Services
 				</HashLink>
@@ -126,15 +126,16 @@ const NavBar = () => {
 						strokeLinecap="round"
 						strokeLinejoin="round"
 					>
-						<path d="m18 15-6-6-6 6" />
+						<path d="M6 9l6 6 6-6" />
 					</svg>
+
 				</button>
-				
-					<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 text-black">
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/about-mrtech">
-								Security
-								{/* HD CC camera
+
+				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-20 md:ml-8 text-black">
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/about-mrtech">
+							Security
+							{/* HD CC camera
 								    hikvision,dahua
 								ip camera
 									hikvision, dahua
@@ -148,11 +149,11 @@ const NavBar = () => {
 
 								portable wifi camera
 									TP-LINK, xiaomi, tenda, sri home, dahua, hikvision, jovision, uniview */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/team">
-								{/* Networking
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/team">
+							{/* Networking
 								Router
 									tp-link, tenda, net gear, d-link, mi, asos, cisco, mikrotik 
 								media converter
@@ -166,23 +167,23 @@ const NavBar = () => {
 									tenda, d-link, tplink, netgear, mikrotik
 								pocket router
 									tplink, huawei, mi, */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/company-documents">
-								Server & Storage
-								{/* Server work station server rack server
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/company-documents">
+							Server & Storage
+							{/* Server work station server rack server
 									hdd server
 									hdd bag server
 									ram server
 									ssd server
 									power supply */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/company-documents">
-								Accessories
-								{/* keyboard
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/company-documents">
+							Accessories
+							{/* keyboard
 								mouse
 								cable
 									usb cable, hdmi cable, vga cable
@@ -191,22 +192,22 @@ const NavBar = () => {
 									transcnd, samsung, adata, 
 								bluetooth receiver
 								thermal paste */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/company-documents">
-								Monitor/Tv
-								{/* led tv
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/company-documents">
+							Monitor/Tv
+							{/* led tv
 									smart tv
 									android tv */}
-								{/* monitor brand msi
+							{/* monitor brand msi
 										lg, asos, hp, dell , gigabyte */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/company-documents">
-								Pc Component
-								{/* processor
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/company-documents">
+							Pc Component
+							{/* processor
 									amd, intel
 								mohterboard
 									gigabyte, msi, asus
@@ -216,38 +217,41 @@ const NavBar = () => {
 									corsiar, gigabyte, asus, thermal take
 								casing
 									corsiar, asus, msi, gigabyte */}
-							</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/company-documents">
-								Storage
-								{/* hdd
+						</Link>
+					</li>
+					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
+						<Link to="/company-documents">
+							Storage
+							{/* hdd
 									toshiba, western digital, 
 								portable hdd
 									toshiba, transent, western digital, adata
 								ssd 
 									gigabyte, hp, transcnd, samsung, seagate, western digital, kingstone, corsiar
 								portable ssd */}
-							</Link>
-						</li>
-					</ul>
-	
+						</Link>
+					</li>
+				</ul>
+
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary">
+			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={toggleDrawer}>
 				<Link to="/gallery">Gallery</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary">
+			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={toggleDrawer}>
 				<HashLink smooth to="/contacts">
 					Contacts
 				</HashLink>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex cursor-pointer text-white flex-col bg-transparent border-2 border-textPrimary hover:bg-textPrimary px-2 rounded-md">
-				<HashLink smooth to="/contacts">
-					Career
-				</HashLink>
+			<li className="group flex cursor-pointer text-white flex-col bg-transparent border-2 border-textPrimary hover:bg-textPrimary px-2 py-2 md:py-1 rounded-md" onClick={toggleDrawer}>
+				<button>
+
+					<HashLink smooth to="/contacts">
+						Career
+					</HashLink>
+				</button>
 			</li>
 		</>
 	);
@@ -255,43 +259,43 @@ const NavBar = () => {
 	const navBarClasses = `fixed top-0 w-full p-4 h-[70px] z-50 transition-all transform bg-black bg-opacity-65 ${isScrolled ? 'shadow-lg' : ''}`;
 
 	return (
-    <nav className={navBarClasses}>
-        <div className="flex items-center mx-5 md:mx-10">
-            <div className="justify-start">
-                <Link to="/">
-                    <img className="w-24" src={Logo} alt="Mr Tech Logo" />
-                </Link>
-            </div>
-            <div className="mx-auto hidden md:flex">
-                <ul className="flex items-center text-textPrimary text-lg font-bold gap-10">
-                    {listing}
-                </ul>
-            </div>
-            <div className="md:hidden">
-                <button onClick={toggleDrawer} className="text-4xl font-bold">
-                    <IoMenu />
-                </button>
-                {isDrawerOpen && (
-                    <div
-                        className="fixed inset-0 z-50 bg-black bg-opacity-50"
-                        onClick={toggleDrawer}
-                    >
-                        <div className="absolute top-0 right-0 w-80 bg-white p-4 h-fit font-bold">
-                            <button
-                                className="flex justify-end font-bold text-xl"
-                                onClick={toggleDrawer}
-                            >
-                                X
-                            </button>
-                            <ul className="mt-4 flex flex-col gap-3">
-                                {listing}
-                            </ul>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
-    </nav>
+		<nav className={navBarClasses}>
+			<div className="flex items-center justify-between mx-0 md:mx-10">
+				<div className="flex items-center">
+					<Link to="/">
+						<img className="w-16 md:w-24" src={Logo} alt="Mr Tech Logo" />
+					</Link>
+				</div>
+				<div className="mx-auto hidden lg:flex">
+					<ul className="flex items-center text-textPrimary text-sm 2xl:text-lg font-bold gap-10">
+						{listing}
+					</ul>
+				</div>
+				<div className="lg:hidden flex items-center justify-end ml-auto">
+					<button onClick={toggleDrawer} className="text-4xl font-bold text-white">
+						<IoMenu />
+					</button>
+				</div>
+			</div>
+
+			{isDrawerOpen && (
+				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden">
+					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-full h-screen bg-black bg-opacity-65 p-4 font-bold">
+						<button
+							className="flex justify-end text-white font-bold text-xl m-4"
+							onClick={toggleDrawer}
+						>
+							X
+						</button>
+						<ul className="mt-4 ml-7 flex flex-col gap-8 text-textPrimary">
+							{listing}
+						</ul>
+					</div>
+				</div>
+			)}
+
+		</nav>
+
 	);
 };
 
