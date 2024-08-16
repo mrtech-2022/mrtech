@@ -8,6 +8,7 @@ import Contacts from '../pages/homepage/Contacts/Contacts';
 import Documents from '../pages/otherPage/Documents/Documents';
 import ServiceDetails from '../pages/otherPage/ServiceDetails/ServiceDetails';
 import Gallery from '../pages/otherPage/Gallery/Gallery';
+import Career from '../pages/otherPage/Career/Career';
 
 const router = createBrowserRouter([
 	{
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
 				path: 'gallery',
 				element: <Gallery />,
 			},
+			{
+				path: 'career',
+				element: <Career />
+			}
 		],
 	},
 ]);

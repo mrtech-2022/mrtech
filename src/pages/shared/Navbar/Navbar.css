@@ -1,9 +1,7 @@
-/* Base styling */
 .navbar-item {
   position: relative;
 }
 
-/* Hide the dropdown by default */
 .navbar-item .dropdown-content {
   display: none;
   position: absolute;
@@ -12,10 +10,23 @@
   background-color: white;
   min-width: 200px;
   z-index: 10;
-  /* width: 100%; */
+ 
 }
 
-/* Show the dropdown when hovering over the button or dropdown */
-.navbar-item:hover .dropdown-content {
+/* Invisible trigger area to keep the dropdown open when hovering over the gap */
+.navbar-item .hover-area {
+  position: absolute;
+  top: 100%; /* Same as dropdown-content */
+  left: 0;
+  width: 100%;
+  height: 20px; /* Same as the margin-top value of dropdown-content */
+  z-index: 5;
+}
+
+/* Show dropdown when hovering over the navbar item or the hover area */
+.navbar-item:hover .dropdown-content,
+.navbar-item:hover .hover-area,
+.navbar-item .dropdown-content:hover,
+.navbar-item .hover-area:hover {
   display: block;
 }

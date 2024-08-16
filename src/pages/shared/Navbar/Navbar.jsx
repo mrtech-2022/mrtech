@@ -28,12 +28,20 @@ const NavBar = () => {
 		};
 	}, []);
 
+	const scrollToHome = () => {
+		const homeElement = document.getElementById('home');
+		if (homeElement) {
+			homeElement.scrollIntoView({ behavior: 'smooth' });
+			window.history.pushState(null, '', '/'); // Update the URL without the hash
+		}
+	};
+
 	const listing = (
 		<>
-			<li className="group flex cursor-pointer flex-col " onClick={toggleDrawer}>
-				<HashLink smooth to="/#home">
+			<li className="group text-white hover:text-textPrimary flex cursor-pointer flex-col " onClick={() => { scrollToHome(); toggleDrawer() }}>
+				<Link to="/">
 					Home
-				</HashLink>
+				</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 			{/* About MRTech Dropdown */}
@@ -55,7 +63,8 @@ const NavBar = () => {
 						<path d="M6 9l6 6 6-6" />
 					</svg>
 				</button>
-				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-24 md:ml-8 text-black">
+				<div className="hover-area"></div>
+				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-24 md:ml-8 text-black lg:mt-5">
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/about-mrtech">About US</Link>
 					</li>
@@ -130,8 +139,8 @@ const NavBar = () => {
 					</svg>
 
 				</button>
-
-				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-20 md:ml-8 text-black">
+				<div className="hover-area"></div>
+				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-20 md:ml-8 text-black lg:mt-5">
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/about-mrtech">
 							Security
@@ -245,12 +254,10 @@ const NavBar = () => {
 				</HashLink>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			<li className="group flex cursor-pointer text-white flex-col bg-transparent border-2 border-textPrimary hover:bg-textPrimary px-2 py-2 md:py-1 rounded-md" onClick={toggleDrawer}>
+			<li className="group flex cursor-pointer text-white flex-col bg-transparent border-2 border-textPrimary hover:bg-textPrimary px-2 py-2 md:py-1 rounded-md transition-all duration-300" onClick={toggleDrawer}>
 				<button>
 
-					<HashLink smooth to="/contacts">
-						Career
-					</HashLink>
+					<Link to='/career'>Career</Link>
 				</button>
 			</li>
 		</>
@@ -279,8 +286,8 @@ const NavBar = () => {
 			</div>
 
 			{isDrawerOpen && (
-				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden">
-					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-full h-screen bg-black bg-opacity-65 p-4 font-bold">
+				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden ">
+					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-full h-screen bg-black bg-opacity-65 p-4 font-bold ">
 						<button
 							className="flex justify-end text-white font-bold text-xl m-4"
 							onClick={toggleDrawer}

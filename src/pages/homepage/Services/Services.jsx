@@ -91,9 +91,8 @@ const Services = () => {
 						<button
 							key={_}
 							onClick={() => setCurrentSlider(inx)}
-							className={`rounded-full duration-500 bg-white ${
-								currentSlider === inx ? 'w-8' : 'wz-2'
-							} h-2`}
+							className={`rounded-full duration-500 bg-white ${currentSlider === inx ? 'w-8' : 'wz-2'
+								} h-2`}
 						></button>
 					))}
 				</div>
@@ -107,7 +106,7 @@ const Services = () => {
 						<img
 							key={slide}
 							src={slide}
-							className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover"
+							className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[480px] object-cover"
 							alt={`Slider - ${index + 1}`}
 						/>
 					))}

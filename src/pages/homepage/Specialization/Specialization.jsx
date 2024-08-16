@@ -6,8 +6,8 @@ const Specialization = () => {
 	const [services] = useServices();
 
 	return (
-		<>
-			<div id="services">
+		<div>
+			<div>
 				<SectionTitle title="Services" />
 				<p className="text-center m-8 md:m-16">
 					As a modern Information Security company, MR Tech combines a
@@ -26,7 +26,7 @@ const Specialization = () => {
 								src={service.image}
 								alt="Service"
 							/>
-							<p className="font-semibold">{service.name}</p>
+							<p className="font-semibold max-w-[25ch]">{service.name}</p>
 							<Link to={`/service-details/${service._id}`}>
 								<button className="bg-textSecondary text-white p-2 m-3 hover:bg-black hover:transition-all ">
 									More Details
@@ -36,7 +36,7 @@ const Specialization = () => {
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
