@@ -63,7 +63,7 @@ const Contacts = () => {
 
 	return (
 		<>
-			{/* top image */}
+			{/* cover image */}
 			<div
 				className="relative about bg-cover bg-no-repeat bg-center p-36 text-white"
 				style={{
@@ -79,7 +79,7 @@ const Contacts = () => {
 				</div>
 			</div>
 
-			<div className='my-10 md:my-20 text-center mx-2'>
+			<div className='my-10 text-center mx-2'>
 				<h1 className='text-4xl text-textSecondary font-bold'>Feel Free Contact Us Today and Get <br /> Your Solution</h1>
 				<p className='mt-6 text-gray-500'>Reach out to us for personalized solutions tailored to your needs. Our expert team is here to <br /> help you achieve your goals.
 
@@ -87,10 +87,10 @@ const Contacts = () => {
 			</div>
 
 			{/* company info */}
-			<div className='grid md:grid-cols-2 lg:grid-cols-3  place-items-center gap-6 md:gap-0 my-10 md:my-20'>
+			<div className='grid md:grid-cols-2 xl:grid-cols-3  place-items-center gap-6 lg:gap-0 my-10'>
 				<div className='bg-gray-100 p-12 px-16 shadow-xl'>
 					<div className='flex gap-6 items-center'>
-						<GiRotaryPhone className='bg-bgBlue text-white text-7xl p-2' />
+						<GiRotaryPhone className='bg-darkBlue text-white text-6xl p-2' />
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Call Us.</h1>
 							<p>+880 1531946491</p>
@@ -99,16 +99,16 @@ const Contacts = () => {
 				</div>
 				<div className='bg-gray-100 p-12 px-16 shadow-xl'>
 					<div className='flex gap-6 items-center'>
-						<MdOutlineMarkEmailUnread className='bg-bgBlue text-white text-7xl p-2' />
+						<MdOutlineMarkEmailUnread className='bg-darkBlue text-white text-6xl p-2' />
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Email Us.</h1>
 							<p>info@mrtech.com.bd</p>
 						</div>
 					</div>
 				</div>
-				<div className='bg-gray-100 p-10 px-14 shadow-xl'>
+				<div className='bg-gray-100 p-8 px-14 shadow-xl'>
 					<div className='flex gap-6 items-center'>
-						<FaHome className='bg-bgBlue text-white text-7xl p-2' />
+						<FaHome className='bg-darkBlue text-white text-6xl p-2' />
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Address</h1>
 							<p className='text-sm'>Evercare Hospital Link<br /> Road
@@ -123,11 +123,11 @@ const Contacts = () => {
 			<div className="-mb-5 mt-8">
 				<div
 					id="contacts"
-					className="bg-bgBlue flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
+					className="bg-darkBlue flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
 				>
 
 					{/* contact form */}
-					<div className="bg-bgBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
+					<div className="bg-darkBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
 						<h1 className="text-5xl text-textPrimary text-center my-6 font-serif">
 							Contacts
 						</h1>
@@ -136,12 +136,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<input
 										name="name"
-										className="peer rounded-xl border-4 border-white bg-bgBlue px-4 py-2 text-white w-full focus:outline-none"
+										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
 										type="text"
 										placeholder="Type your name"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-bgBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-bgBlue "
+										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
 										htmlFor=""
 									>
 										Name
@@ -150,12 +150,12 @@ const Contacts = () => {
 								<div className="relative w-full rounded-lg">
 									<input
 										name="email"
-										className="peer w-full rounded-xl border-4 border-white bg-bgBlue px-4 py-2 text-white focus:outline-none"
+										className="peer w-full rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white focus:outline-none"
 										type="email"
 										placeholder="Your email"
 									/>
 									<label
-										className="absolute text-white -top-2 left-[10px] bg-bgBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-bgBlue"
+										className="absolute text-white -top-2 left-[10px] bg-darkBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-darkBlue"
 										htmlFor=""
 									>
 										Email
@@ -164,12 +164,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<input
 										name="name"
-										className="peer rounded-xl border-4 border-white bg-bgBlue px-4 py-2 text-white w-full focus:outline-none"
+										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
 										type="number"
 										placeholder="Enter Phone Number"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-bgBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-bgBlue "
+										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
 										htmlFor=""
 									>
 										Number
@@ -178,12 +178,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<input
 										name="name"
-										className="peer rounded-xl border-4 border-white bg-bgBlue px-4 py-2 text-white w-full focus:outline-none"
+										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
 										type="text"
 										placeholder="Type your name"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-bgBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-bgBlue "
+										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
 										htmlFor=""
 									>
 										Address
@@ -192,12 +192,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<textarea
 										name="message"
-										className="peer rounded-xl border-4 border-white w-full h-24 bg-bgBlue px-4 py-2 text-white focus:outline-none resize-none"
+										className="peer rounded-xl border-4 border-white w-full h-24 bg-darkBlue px-4 py-2 text-white focus:outline-none resize-none"
 										type="text"
 										placeholder="Details message"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-bgBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-bgBlue text-white"
+										className="absolute -top-2 left-[10px] bg-darkBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-darkBlue text-white"
 										htmlFor=""
 									>
 										Messsage

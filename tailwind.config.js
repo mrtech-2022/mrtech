@@ -7,6 +7,7 @@ export default {
 				textPrimary: '#ED334A',
 				textSecondary: '#1778BC',
 				bgBlue: '#00203F',
+				darkBlue: '#050222'
 			},
 		},
 	},

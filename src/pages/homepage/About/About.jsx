@@ -1,7 +1,11 @@
+import { FaHandshakeAngle } from 'react-icons/fa6';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import networkImg from '/assets/network.jpg';
 import peopleImg from '/assets/people.jpg';
 import teamImg from '/assets/team.jpg';
+import { TbCloudLock, TbHandClick } from "react-icons/tb";
+import { Link } from 'react-router-dom';
+
 
 const About = () => {
 	return (
@@ -27,13 +31,16 @@ const About = () => {
 							<img src={networkImg} alt="Network" />
 						</figure>
 						<div className="card-body">
-							<h2 className="card-title mx-auto font-bold">
+							<h2 className="card-title mx-auto font-bold mt-4">
 								Highest Standards
 							</h2>
 							<p className="mb-10 text-justify">
 								We always ensure the highest standard solution and with the
 								quality product.
 							</p>
+						</div>
+						<div>
+							<TbHandClick className='absolute text-white top-[43%] left-[43%] bg-orange-700 rounded-full p-1 text-5xl hover:bg-white hover:text-bgBlue transition-all duration-500' />
 						</div>
 					</div>
 
@@ -43,7 +50,7 @@ const About = () => {
 							<img src={peopleImg} alt="Network" />
 						</figure>
 						<div className="card-body">
-							<h2 className="card-title mx-auto font-bold">
+							<h2 className="card-title mx-auto font-bold mt-4">
 								Creative Solutions
 							</h2>
 							<p className="text-justify mb-10">
@@ -51,22 +58,37 @@ const About = () => {
 								satisfaction.
 							</p>
 						</div>
+						<div>
+							<TbCloudLock className='absolute text-white top-[43%] left-[43%] bg-orange-700 rounded-full p-1 text-5xl hover:bg-white hover:text-bgBlue transition-all duration-500' />
+						</div>
 					</div>
 
-					{/* Card-2 */}
-					<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl">
+					{/* Card-3 */}
+					<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl relative group">
 						<figure className="h-48">
-							<img src={teamImg} alt="Network" />
+							<Link to='/team'>
+								<img src={teamImg} alt="Network" className="w-full h-full object-cover" />
+							</Link>
 						</figure>
 						<div className="card-body">
-							<h2 className="card-title mx-auto font-bold">Our Team</h2>
-							<p className="text-justify mb-10">
+							<h2 className="card-title mx-auto font-bold mt-4 hover:text-textPrimary">
+								<Link to="/team">
+									Our Team
+								</Link>
+							</h2>
+							<p className="text-justify">
 								To be a global leader in state-of-the-art cyber security
 								solutions, helping individuals and innovative companies to
 								function in a more secure and stable environment.
 							</p>
 						</div>
+						<div>
+							<Link to='/team'>
+								<FaHandshakeAngle className='absolute text-white top-[43%] left-[43%] bg-orange-700 rounded-full p-1 text-5xl transition-all duration-500 cursor-pointer group-hover:bg-white group-hover:text-bgBlue' />
+							</Link>
+						</div>
 					</div>
+
 				</div>
 			</div>
 			<div id='services'></div>

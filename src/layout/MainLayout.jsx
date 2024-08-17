@@ -2,9 +2,10 @@ import { Outlet } from 'react-router-dom';
 import NavBar from '../pages/shared/Navbar/Navbar';
 import Footer from '../pages/shared/Footer/Footer';
 import PageTopPosition from '../components/PageTopPosition/PageTopPosition';
-import { FaArrowUp, FaWhatsappSquare } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaSquareWhatsapp } from 'react-icons/fa6';
 
 const MainLayout = () => {
 	const [isVisible, setIsVisible] = useState(false)
@@ -44,7 +45,7 @@ const MainLayout = () => {
 					className={`fixed bottom-20 right-8 z-10 transition-all duration-300
 						}`}
 				>
-					<FaWhatsappSquare className="text-4xl sm:text-5xl text-green-500 font-bold rounded-full " />
+					<FaSquareWhatsapp className="text-4xl sm:text-5xl text-green-500 font-bold " />
 				</a>
 			</div>
 
@@ -53,10 +54,10 @@ const MainLayout = () => {
 				<Link
 					to="#"
 					onClick={scrollToTop}
-					className={`fixed bottom-8 right-8 z-10 transition-all duration-300 ${isVisible ? 'block' : 'hidden'
+					className={`fixed bottom-8 right-8 z-10 ${isVisible ? 'block' : 'hidden'
 						}`}
 				>
-					<FaArrowUp className="text-3xl md:text-4xl bg-textSecondary text-white font-bold p-2 rounded-full hover:bg-textPrimary" />
+					<FaArrowUp className="text-3xl md:text-4xl bg-textSecondary text-white font-bold p-2 rounded-full hover:bg-textPrimary transition-all duration-300 " />
 				</Link>
 			</div>
 		</div>
