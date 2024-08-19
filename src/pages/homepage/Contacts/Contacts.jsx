@@ -81,6 +81,7 @@ const Contacts = () => {
 				</div>
 			</div>
 
+			{/* middle text */}
 			<div className='my-10 text-center mx-2'>
 				<h1 className='text-4xl text-textSecondary font-bold'>Feel Free Contact Us Today and Get <br /> Your Solution</h1>
 				<p className='mt-6 text-gray-500'>Reach out to us for personalized solutions tailored to your needs. Our expert team is here to <br /> help you achieve your goals.
@@ -265,7 +266,7 @@ const Contacts = () => {
 					<div>
 						<iframe
 							className="w-96 p-2 sm:w-[450px] md:w-[400px] lg:w-[650px] h-96"
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.9846217854624!2d90.45004731083874!3d23.819145878534467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c984540003c7%3A0xc604635ad494a2bb!2sApollo%20Hospital!5e0!3m2!1sen!2sbd!4v1719655151410!5m2!1sen!2sbd"
+							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.184943008018!2d90.4288286!3d23.8080628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75c6f4edaed%3A0x27d198cada031f5e!2sMR%20Tech!5e0!3m2!1sen!2sbd!4v1724095327697!5m2!1sen!2sbd"
 							allowfullscreen=""
 							loading="lazy"
 						></iframe>

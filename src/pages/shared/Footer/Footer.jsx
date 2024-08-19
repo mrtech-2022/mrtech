@@ -23,7 +23,7 @@ const Footer = () => {
 						src="https://i.ibb.co/B3G283b/MR-Tech2.png"
 						alt="MR Tech"
 					/>
-					<p className='text-white text-justify w-4/5 text-sm my-3'>
+					<p className='text-gray-300 text-justify w-4/5 text-sm my-3'>
 						Core values are the fundamental beliefs of a person or
 						organization. These guiding principles dictate behavior and
 						can help people understand the difference between right and
@@ -81,29 +81,29 @@ const Footer = () => {
 
 					<ul>
 						<li
-							className="text-gray-300 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
+							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
 						>
 							<Link to="/about-mrtech">About US</Link>
 						</li>
 						<li
-							className="text-gray-300 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
+							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
 						>
 							<Link to="/team">Our Team</Link>
 						</li>
 						<li
-							className="text-gray-300 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
+							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
 						>
 							<Link to="/career">Career</Link>
 						</li>
 						<li
-							className="text-gray-300 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
+							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
 						>
 							<Link to="/company-documents">Company Documents</Link>
 						</li>
 					</ul>
 				</div>
 
-				{/* Registered Office */}
+				{/* Get in touch */}
 				<div className="text-textPrimary">
 					<h1 className="text-xl mb-5 text-white font-bold relative inline-block">
 						Get In Touch
@@ -113,16 +113,16 @@ const Footer = () => {
 						></span>
 					</h1>
 
-					<p className='flex items-center gap-3 text-white hover:text-textPrimary transition-all duration-300'>
+					<p className='flex items-center gap-3 text-gray-400 hover:text-textPrimary transition-all duration-300'>
 						<FaHome className='text-textPrimary text-lg' />
-						<p>Evercare Hospital Link Road <br />
-							(Beside Bashundhara), Vatara, Dhaka-1212</p>
+						<a href='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.184943008018!2d90.4288286!3d23.8080628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75c6f4edaed%3A0x27d198cada031f5e!2sMR%20Tech!5e0!3m2!1sen!2sbd!4v1724095327697!5m2!1sen!2sbd' target='blank'>Evercare Hospital Link Road <br />
+							(Beside Bashundhara), Vatara, Dhaka-1212</a>
 					</p>
-					<a href="mailto:info@mrtech.com.bd" className='flex items-center gap-3 mt-5 text-white hover:text-textPrimary transition-all duration-300'>
+					<a href="mailto:info@mrtech.com.bd" className='flex items-center gap-3 mt-5 text-gray-400 hover:text-textPrimary transition-all duration-300'>
 						<IoIosMailOpen className='text-textPrimary text-lg' />
 						<p>info@mrtech.com.bd</p>
 					</a>
-					<a href="tel:01531946491" className='flex items-center gap-3 mt-2 text-white hover:text-textPrimary transition-all duration-300'>
+					<a href="tel:01531946491" className='flex items-center gap-3 mt-2 text-gray-400 hover:text-textPrimary transition-all duration-300'>
 						<IoCall className='text-textPrimary text-lg' />
 						<p>+8801531946491</p>
 					</a>

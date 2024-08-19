@@ -47,7 +47,7 @@ const About = () => {
 					{/* Card-2 */}
 					<div className="card card-compact w-80 h-96 bg-base-100 rounded-md shadow-xl">
 						<figure className="h-48">
-							<img src={peopleImg} alt="Network" />
+							<img src="https://i.ibb.co/mBbKL8N/creative.jpg" alt="Network" />
 						</figure>
 						<div className="card-body">
 							<h2 className="card-title mx-auto font-bold mt-4">
