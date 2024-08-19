@@ -3,7 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import networkImg from '/assets/network.jpg';
 import peopleImg from '/assets/people.jpg';
 import teamImg from '/assets/team.jpg';
-import { TbCloudLock, TbHandClick } from "react-icons/tb";
+import { TbBulb, TbHandClick } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
 
@@ -59,7 +59,7 @@ const About = () => {
 							</p>
 						</div>
 						<div>
-							<TbCloudLock className='absolute text-white top-[43%] left-[43%] bg-orange-700 rounded-full p-1 text-5xl hover:bg-white hover:text-bgBlue transition-all duration-500' />
+							<TbBulb className='absolute text-white top-[43%] left-[43%] bg-orange-700 rounded-full p-1 text-5xl hover:bg-white hover:text-bgBlue transition-all duration-500' />
 						</div>
 					</div>
 

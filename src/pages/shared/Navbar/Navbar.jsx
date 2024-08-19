@@ -263,12 +263,12 @@ const NavBar = () => {
 		</>
 	);
 
-	const navBarClasses = `fixed top-0 w-full p-4 h-[70px] z-50 transition-all transform bg-black bg-opacity-65 ${isScrolled ? 'shadow-lg' : ''}`;
+	const navBarClasses = `fixed top-0 w-full p-4 h-[70px] z-50 transition-all transform bg-black  ${isScrolled ? 'shadow-lg' : ''}`;
 
 	return (
 		<nav className={navBarClasses}>
 			<div className="flex items-center justify-between mx-0 md:mx-10">
-				<div className="flex items-center">
+				<div className="flex items-center" onClick={() => { scrollToHome() }}>
 					<Link to="/">
 						<img className="w-16 md:w-24" src={Logo} alt="Mr Tech Logo" />
 					</Link>

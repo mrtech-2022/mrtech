@@ -25,14 +25,11 @@ const Banner = () => {
 
 						{/* Intro text */}
 						<div className="text-center md:w-1/2 mx-3 md:mx-auto">
-							<h1 className="text-gray-400 font-semibold text-4xl mb-5">
+							<h1 className="text-gray-300 font-semibold text-4xl mb-5 mt-14 sm:mt-0">
 								Grow Your Fantastic Network
 							</h1>
 							<p className="text-white">
-								Core values are the fundamental beliefs of a person or
-								organization. These guiding principles dictate behavior and
-								can help people understand the difference between right and
-								wrong.
+								Allah is the owner of everything and security. Then we will be careful. The threat is very real and the threat of attack is imminent. So MR Tech is created with the sole purpose of providing security to the clients if Allah wills.
 							</p>
 							<HashLink smooth to="/#about">
 								<button className="bg-textPrimary p-3 px-7 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all duration-300">
@@ -84,6 +81,8 @@ const Banner = () => {
 									Projects
 								</p>
 							</div>
+
+
 						</div>
 					</div>
 				</div>

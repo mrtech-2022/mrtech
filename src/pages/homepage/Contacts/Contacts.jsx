@@ -15,8 +15,10 @@ const Contacts = () => {
 		const form = e.target;
 		const name = form.name.value;
 		const email = form.email.value;
+		const number = form.number.value;
+		const address = form.address.value;
 		const message = form.message.value;
-		if (!name || !email || !message) {
+		if (!name || !email || !number || !address || !message) {
 			toast('Fill up all forms', {
 				position: 'top-center',
 				autoClose: 3000,
@@ -65,15 +67,15 @@ const Contacts = () => {
 		<>
 			{/* cover image */}
 			<div
-				className="relative about bg-cover bg-no-repeat bg-center p-36 text-white"
+				className="relative about bg-cover bg-no-repeat bg-center p-36 text-bgBlue"
 				style={{
 					backgroundImage: `url('/assets/Contact1.jpg')`,
 				}}
 			>
 				{/* Overlay for reducing background image opacity */}
 				<div className="absolute inset-0 bg-black opacity-80"></div>
-				<div className="relative flex justify-center z-40 text-white p-6 md:p-10">
-					<h1 className="text-5xl font-bold mb-4 text-center">
+				<div className="relative flex justify-center z-40 p-6 md:p-10">
+					<h1 className="text-5xl font-bold mb-4 text-center text-white">
 						Contact
 					</h1>
 				</div>
@@ -123,12 +125,12 @@ const Contacts = () => {
 			<div className="-mb-5 mt-8">
 				<div
 					id="contacts"
-					className="bg-darkBlue flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
+					className="f flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
 				>
 
 					{/* contact form */}
-					<div className="bg-darkBlue p-6 px-8 w-full md:w-[350px] rounded-xl">
-						<h1 className="text-5xl text-textPrimary text-center my-6 font-serif">
+					<div className="  p-6 px-8 w-full md:w-[350px] rounded-xl">
+						<h1 className="text-5xl text-bgBlue text-center my-6 font-bold">
 							Contacts
 						</h1>
 						<form ref={formValue} onSubmit={handleSubmit}>
@@ -136,12 +138,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<input
 										name="name"
-										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
+										className="peer rounded-xl border-4  border-bgBlue   px-4 py-2 text-bgBlue w-full focus:outline-none"
 										type="text"
 										placeholder="Type your name"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
+										className="absolute -top-2 left-[10px] bg-white font-bold px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-bgBlue focus:  "
 										htmlFor=""
 									>
 										Name
@@ -150,12 +152,12 @@ const Contacts = () => {
 								<div className="relative w-full rounded-lg">
 									<input
 										name="email"
-										className="peer w-full rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white focus:outline-none"
+										className="peer w-full rounded-xl border-4  border-bgBlue   px-4 py-2 text-bgBlue focus:outline-none"
 										type="email"
 										placeholder="Your email"
 									/>
 									<label
-										className="absolute text-white -top-2 left-[10px] bg-darkBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-darkBlue"
+										className="absolute text-bgBlue -top-2 left-[10px] bg-white font-bold px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus: "
 										htmlFor=""
 									>
 										Email
@@ -163,13 +165,13 @@ const Contacts = () => {
 								</div>
 								<div className="relative  w-full rounded-lg">
 									<input
-										name="name"
-										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
+										name="number"
+										className="peer rounded-xl border-4  border-bgBlue   px-4 py-2 text-bgBlue w-full focus:outline-none"
 										type="number"
 										placeholder="Enter Phone Number"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
+										className="absolute -top-2 left-[10px] bg-white font-bold px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-bgBlue focus:  "
 										htmlFor=""
 									>
 										Number
@@ -177,13 +179,13 @@ const Contacts = () => {
 								</div>
 								<div className="relative  w-full rounded-lg">
 									<input
-										name="name"
-										className="peer rounded-xl border-4 border-white bg-darkBlue px-4 py-2 text-white w-full focus:outline-none"
+										name="address"
+										className="peer rounded-xl border-4  border-bgBlue   px-4 py-2 text-bgBlue w-full focus:outline-none"
 										type="text"
 										placeholder="Type your name"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-darkBlue px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-white focus:bg-darkBlue "
+										className="absolute -top-2 left-[10px] bg-white font-bold px-2 duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] text-bgBlue focus:  "
 										htmlFor=""
 									>
 										Address
@@ -192,12 +194,12 @@ const Contacts = () => {
 								<div className="relative  w-full rounded-lg">
 									<textarea
 										name="message"
-										className="peer rounded-xl border-4 border-white w-full h-24 bg-darkBlue px-4 py-2 text-white focus:outline-none resize-none"
+										className="peer rounded-xl border-4  border-bgBlue w-full h-24   px-4 py-2 text-bgBlue focus:outline-none resize-none"
 										type="text"
 										placeholder="Details message"
 									/>
 									<label
-										className="absolute -top-2 left-[10px] bg-darkBlue px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:bg-darkBlue text-white"
+										className="absolute -top-2 left-[10px] bg-white font-bold px-2   duration-300 peer-placeholder-shown:left-[14px] placeholder-shown:top-3 focus:-top-2 focus:left-[10px] focus:  text-bgBlue"
 										htmlFor=""
 									>
 										Messsage
