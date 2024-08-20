@@ -77,6 +77,9 @@ const Banner = () => {
 					</div>
 				</div>
 			</div>
+			<div id='about'>
+
+			</div>
 		</div>
 	);
 };
