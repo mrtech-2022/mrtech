@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import NavBar from '../pages/shared/Navbar/Navbar';
 import Footer from '../pages/shared/Footer/Footer';
 import PageTopPosition from '../components/PageTopPosition/PageTopPosition';
@@ -9,8 +9,14 @@ import { FaSquareWhatsapp } from 'react-icons/fa6';
 
 const MainLayout = () => {
 	const [isVisible, setIsVisible] = useState(false)
+	const { pathname } = useLocation();
 
+	/* this use for show at the top of the page when changing any route */
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
+	/* scroll to top button */
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,

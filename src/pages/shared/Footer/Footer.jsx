@@ -9,6 +9,7 @@ import { FaSquareXTwitter, } from 'react-icons/fa6';
 import { IoIosMailOpen } from "react-icons/io";
 import { IoCall } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import logo from '/assets/MR-Tech2.png';
 
 const Footer = () => {
 	return (
@@ -18,11 +19,13 @@ const Footer = () => {
 				className="bg-black grid md:grid-cols-3 p-6 md:px-16 md:justify-items-center mt-5"
 			>
 				<div className="flex flex-col justify-center ">
-					<img
-						className="w-1/4"
-						src="https://i.ibb.co/B3G283b/MR-Tech2.png"
-						alt="MR Tech"
-					/>
+					<Link to="/">
+						<img
+							className="w-1/4"
+							src={logo}
+							alt="MR Tech"
+						/>
+					</Link>
 					<p className='text-gray-300 text-justify w-4/5 text-sm my-3'>
 						Core values are the fundamental beliefs of a person or
 						organization. These guiding principles dictate behavior and
