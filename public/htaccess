@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # Add www to any URLs that do not have them:
 RewriteEngine on
 RewriteCond %{HTTP_HOST} !^www\.
+=======
+# Add www to any URLs that do not have them:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.
+>>>>>>> 0715507b31431299c797b14e3dedbf4ca1d1caea
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
