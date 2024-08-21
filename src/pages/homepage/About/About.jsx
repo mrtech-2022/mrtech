@@ -1,11 +1,9 @@
 import { FaHandshakeAngle } from 'react-icons/fa6';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import networkImg from '/assets/network.jpg';
-import peopleImg from '/assets/people.jpg';
 import teamImg from '/assets/team.jpg';
 import { TbBulb, TbHandClick } from "react-icons/tb";
 import { Link } from 'react-router-dom';
-import ParticlesComponent from '../../../components/Particles/Particles';
 
 
 const About = () => {

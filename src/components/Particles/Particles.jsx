@@ -32,7 +32,7 @@ export default function Particle() {
                         interactivity: {
                             events: {
                                 onClick: {
-                                    enable: true,
+                                    enable: false,
                                     mode: "push",
                                 },
                                 onHover: {
@@ -57,7 +57,7 @@ export default function Particle() {
                             },
                             links: {
                                 color: "#ED334A",
-                                distance: 180,
+                                distance: 220,
                                 enable: true,
                                 opacity: 1,
                                 width: 0.9,
@@ -69,7 +69,7 @@ export default function Particle() {
                                     default: "bounce",
                                 },
                                 random: false,
-                                speed: 3.5,
+                                speed: 3,
                                 straight: false,
                             },
                             number: {
@@ -77,7 +77,7 @@ export default function Particle() {
                                     enable: true,
                                     area: 800,
                                 },
-                                value: 250,
+                                value: 280,
                             },
                             opacity: {
                                 value: 0.4,

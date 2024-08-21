@@ -21,7 +21,7 @@ const Banner = () => {
 				<div className="flex flex-col gap-36">
 					{/* Intro text */}
 					<div className="text-center md:w-1/2 mx-3 md:mx-auto">
-						<h1 className="text-gray-300 font-semibold text-4xl mb-5 mt-14 sm:mt-0">
+						<h1 className="text-sky-600 font-semibold text-4xl mb-5 mt-20 sm:mt-0">
 							Grow Your Fantastic Network
 						</h1>
 						<p className="text-white">

@@ -1,26 +1,15 @@
 import { TbDeviceDesktopBolt } from 'react-icons/tb';
 import { LuTarget } from 'react-icons/lu';
 import { MdPushPin } from 'react-icons/md';
+import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
 
 const AboutCompany = () => {
 	return (
 		<div>
-			{/* top section will */}
-			<div
-				className="relative about bg-cover bg-no-repeat bg-center mx-4 md:mx-10 mt-28 p-12"
-				style={{
-					backgroundImage: `url('https://i.ibb.co/H4kpRCj/Network.jpg')`,
-				}}
-			>
-				{/* Overlay for reducing background image opacity */}
-				<div className="absolute inset-0 bg-black opacity-60"></div>
-
-				<div className="relative z-10 text-white bg-gray-100 bg-opacity-30 p-6 md:p-10">
-					<h1 className="text-2xl font-bold mb-4 text-center">
-						About MR Tech
-					</h1>
-					<p>
-						MR Tech is a customer-oriented electronic Higher safety
+			{/* top section */}
+			<SectionTopStyle
+				title="About MR Tech"
+				content="MR Tech is a customer-oriented electronic Higher safety
 						security, and customized IT, solution provider, with a
 						far-reaching vision of adding values to the society and
 						industry we operate in. Most of our solutions are backed up by
@@ -30,10 +19,9 @@ const AboutCompany = () => {
 						customer’s requirements and satisfy them by providing unique
 						solutions specifically tailored to individual customer’s need
 						and also enables us to provide unparalleled after-sale
-						service.
-					</p>
-				</div>
-			</div>
+						service."
+				backgroundImage="https://i.ibb.co/H4kpRCj/Network.jpg"
+			/>
 
 			<div className="bg-gray-100 mx-4 md:mx-20 mt-28 p-6">
 				<h1 className="text-2xl font-bold mb-4">Historical Background</h1>

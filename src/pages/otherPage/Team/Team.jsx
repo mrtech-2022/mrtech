@@ -1,18 +1,27 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaXTwitter } from 'react-icons/fa6';
+import teamImg from '/assets/team.jpg'
+import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
 
 const Team = () => {
 	return (
 		<div>
-			<SectionTitle title="Our Team" />
+			<SectionTopStyle
+				title="Our Team"
+				content="We celebrate diversity as our strength and believe in creating an
+					inclusive environment for all. Discrimination has no place here;
+					we're united in valuing each individual's unique contributions."
+				backgroundImage={teamImg}
+			/>
+			{/* <SectionTitle title="Our Team" />
 			<div className="text-center mx-16">
 				<p>
 					We celebrate diversity as our strength and believe in creating an
 					inclusive environment for all. Discrimination has no place here;
 					we're united in valuing each individual's unique contributions.
 				</p>
-			</div>
+			</div> */}
 			{/* Owner information */}
 			<div className="m-8 ml-12 my-32">
 				<h1 className="text-5xl font-bold border-l-[13px]  border-textSecondary p-3">
