@@ -1,5 +1,4 @@
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaXTwitter } from 'react-icons/fa6';
 import teamImg from '/assets/team.jpg'
 import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
@@ -24,13 +23,13 @@ const Team = () => {
 			</div> */}
 			{/* Owner information */}
 			<div className="m-8 ml-12 my-32">
-				<h1 className="text-5xl font-bold border-l-[13px]  border-textSecondary p-3">
+				<h1 className="text-4xl md:text-5xl font-bold border-l-[13px]  border-textSecondary p-3">
 					Management Team
 				</h1>
 				<div className="flex flex-col items-center  md:flex-row my-10">
 					<div className="group relative ">
 						<img
-							className="scale-105 transform rounded-lg bg-black/70 w-[300px]"
+							className="scale-105 transform rounded-lg bg-black/70 w-[307px] md:w-[300px]"
 							src="https://i.ibb.co/Ht13Dy6/2-2.jpg"
 							alt="card ui"
 						/>
@@ -123,7 +122,7 @@ const Team = () => {
 
 			{/* Developer Team */}
 			<div className="m-8 ml-12">
-				<h1 className="text-5xl font-bold border-l-[13px] border-textSecondary p-3">
+				<h1 className="text-4xl md:text-5xl font-bold border-l-[13px] border-textSecondary p-3">
 					Developer Team
 				</h1>
 				<div className="flex flex-col items-center md:flex-row-reverse justify-end my-10">

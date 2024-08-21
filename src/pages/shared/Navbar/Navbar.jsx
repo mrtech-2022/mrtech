@@ -4,6 +4,7 @@ import Logo from '/assets/MR-Tech2.png';
 import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import './Navbar.css'
+import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSection';
 
 const NavBar = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -77,10 +78,11 @@ const NavBar = () => {
 				</ul>
 			</li>
 
-			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={toggleDrawer}>
-				<HashLink smooth to="/#services">
-					Services
-				</HashLink>
+			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={() => {
+				toggleDrawer();
+				scrollToSection('services')
+			}}>
+				Services
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 			{/* <li ref={servicesRef} className="relative group cursor-pointer">

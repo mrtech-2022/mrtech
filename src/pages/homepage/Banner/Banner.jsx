@@ -4,11 +4,13 @@ import useServices from '../../../hooks/useServices';
 import useClients from '../../../hooks/useClients';
 import useProjects from '../../../hooks/useProjects';
 import Particle from '../../../components/Particles/Particles';
+import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSection';
 
 const Banner = () => {
 	const [services] = useServices();
 	const [clients] = useClients();
 	const [projects] = useProjects();
+
 
 	return (
 		<div id="home" className="relative h-screen overflow-hidden">
@@ -27,11 +29,9 @@ const Banner = () => {
 						<p className="text-white">
 							Allah is the owner of everything and security. Then we will be careful. The threat is very real and the threat of attack is imminent. So MR Tech is created with the sole purpose of providing security to the clients if Allah wills.
 						</p>
-						<HashLink smooth to="/#about">
-							<button className="bg-textPrimary p-3 px-7 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all duration-300">
-								Get Started
-							</button>
-						</HashLink>
+						<button onClick={() => scrollToSection('about')} className="bg-textPrimary p-3 px-7 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all duration-300">
+							Get Started
+						</button>
 					</div>
 
 					<div className="md:-mb-28 m-auto overflow-hidden text-textPrimary bottom-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 h-full gap-4 md:gap-8 place-items-end uppercase font-bold">
