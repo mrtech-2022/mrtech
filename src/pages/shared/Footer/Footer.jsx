@@ -42,14 +42,14 @@ const Footer = () => {
 					<div className="flex gap-2">
 						<a
 							className="text-textSecondary text-2xl"
-							href="https://www.facebook.com/mrtech.bd2022"
+							href="https://www.facebook.com/mrtech.bd2024"
 							target="blank"
 						>
 							<FaFacebookSquare />
 						</a>
 						<a
 							className="text-textPrimary text-2xl"
-							href="https://www.facebook.com/mrtech.bd2022"
+							href="https://www.facebook.com/mrtech.bd2024"
 							target="blank"
 						>
 							<FaInstagramSquare />
@@ -57,14 +57,14 @@ const Footer = () => {
 
 						<a
 							className="text-white text-2xl"
-							href="https://www.facebook.com/mrtech.bd2022"
+							href="https://www.facebook.com/mrtech.bd2024"
 							target="blank"
 						>
 							<FaSquareXTwitter />
 						</a>
 						<a
 							className="text-textSecondary text-2xl"
-							href="https://www.facebook.com/mrtech.bd2022"
+							href="https://www.facebook.com/mrtech.bd2024"
 							target="blank"
 						>
 							<FaLinkedin />

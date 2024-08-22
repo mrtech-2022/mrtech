@@ -38,7 +38,7 @@ const OurWorks = () => {
 			<div>
 				<SectionTitle title="Explore Recent Work" />
 				<div className='flex justify-center'>
-					<img className='w-2/3 sm:w-1/2' src="https://i.ibb.co/7K5xjJp/project.jpg" alt="Projects" />
+					<img className='w-2/3 sm:w-1/3' src="https://i.ibb.co/7K5xjJp/project.jpg" alt="Projects" />
 				</div>
 			</div>
 		</div>

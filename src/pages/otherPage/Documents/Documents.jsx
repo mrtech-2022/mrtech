@@ -5,8 +5,7 @@ const Documents = () => {
 		<div className="h-screen">
 			<SectionTopStyle
 				title="MR Tech Documents"
-				content="MR Tech is a customer-oriented electronic Higher safety,
-						security, and customized IT, solution provider in Bangladesh. Here you can find all our company documents 	"
+				content="MR Tech is a customer-oriented It setup, security, product and customized IT  solution provider in Bangladesh. Here you can find all our company documents."
 				backgroundImage="https://i.ibb.co/hBHfCw4/document.jpg"
 			// backgroundImage="https://i.ibb.co/wgrtK8S/document.jpg"
 			/>

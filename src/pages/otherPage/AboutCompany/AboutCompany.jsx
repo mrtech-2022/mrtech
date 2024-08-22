@@ -16,14 +16,13 @@ const AboutCompany = () => {
 			<div className="bg-gray-100 mx-4 md:mx-20 mt-28 p-6">
 				<h1 className="text-2xl font-bold mb-4">Historical Background</h1>
 				<p>
-					<span className="text-textPrimary font-bold">MR Tech Ltd</span>{' '}
-					is one of the fastest-growing customized IT & Electronic Safety &
-					Security Solutions provider company in Bangladesh Since 2022.{' '}
+					<span className="text-textPrimary font-bold">MR Tech</span>{' '}
+					started its first journey in 2024. Which is one of the companies providing customized IT safety and security solutions.
 					<br />
 					<br />
 					Understanding customer’s needs want and demands,{' '}
 					<span className="font-bold text-textPrimary">MR TECH</span> was
-					established in 2022 to Provide the hightest quality safety and
+					established in 2024 to Provide the hightest quality safety and
 					security solutions.
 					<br />
 					<br />
@@ -83,9 +82,7 @@ const AboutCompany = () => {
 					<h1 className="text-2xl font-bold my-3">Objective</h1>
 					<ul className="list-disc pl-5 space-y-3">
 						<li>
-							MR Tech established its business in customized IT and
-							Higher Electronical safety and security products importer,
-							distributor, system integrator.
+							MR Tech established its business in customized IT Setup and service and security  and products
 						</li>
 						<li>
 							To digitalize the safety and security sector in Bangladesh.
