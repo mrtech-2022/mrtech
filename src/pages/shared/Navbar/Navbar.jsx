@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoMenu } from 'react-icons/io5';
 import Logo from '/assets/MR-Tech2.png';
 import { HashLink } from 'react-router-hash-link';
@@ -9,6 +9,7 @@ import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSec
 const NavBar = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const navigate = useNavigate()
 
 	const toggleDrawer = () => {
 		setIsDrawerOpen(!isDrawerOpen);
@@ -65,7 +66,7 @@ const NavBar = () => {
 					</svg>
 				</button>
 				<div className="hover-area"></div>
-				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-24 md:ml-8 text-black lg:mt-5">
+				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-8 sm:ml-16 lg:ml-8 text-black lg:mt-5">
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/about-mrtech">About US</Link>
 					</li>
@@ -80,7 +81,7 @@ const NavBar = () => {
 
 			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={() => {
 				toggleDrawer();
-				scrollToSection('services')
+				scrollToSection('services', navigate)
 			}}>
 				Services
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
@@ -142,7 +143,7 @@ const NavBar = () => {
 
 				</button>
 				<div className="hover-area"></div>
-				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-20 md:ml-8 text-black lg:mt-5">
+				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-10 sm:ml-16 lg:ml-8 text-black lg:mt-5">
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/about-mrtech">
 							Security
@@ -265,14 +266,14 @@ const NavBar = () => {
 		</>
 	);
 
-	const navBarClasses = `fixed top-0 w-full p-4 h-[70px] z-50 transition-all transform bg-black  ${isScrolled ? 'shadow-lg' : ''}`;
+	const navBarClasses = `fixed top-0 w-full p-2 z-50 transition-all transform bg-black  ${isScrolled ? 'shadow-lg' : ''}`;
 
 	return (
 		<nav className={navBarClasses}>
 			<div className="flex items-center justify-between mx-0 md:mx-10">
 				<div className="flex items-center" onClick={() => { scrollToHome() }}>
 					<Link to="/">
-						<img className="w-16 md:w-24" src={Logo} alt="Mr Tech Logo" />
+						<img className="w-16 md:w-28" src={Logo} alt="Mr Tech Logo" />
 					</Link>
 				</div>
 				<div className="mx-auto hidden lg:flex">
@@ -289,7 +290,7 @@ const NavBar = () => {
 
 			{isDrawerOpen && (
 				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden ">
-					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-full h-screen bg-black bg-opacity-65 p-4 font-bold ">
+					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-[80%] h-screen bg-black bg-opacity-90 p-4 font-bold ">
 						<button
 							className="flex justify-end text-white font-bold text-xl m-4"
 							onClick={toggleDrawer}

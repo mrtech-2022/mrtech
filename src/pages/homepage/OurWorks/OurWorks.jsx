@@ -10,7 +10,7 @@ const OurWorks = () => {
 
 	return (
 		<div>
-			<div className="md:flex p-5 text-center text-4xl text-white md:m-14 mt-20 uppercase">
+			{/* <div className="md:flex p-5 text-center text-4xl text-white md:m-14 mt-20 uppercase">
 				<div className="bg-textPrimary p-6 md:w-1/2">
 					02 years of Experience
 				</div>
@@ -34,6 +34,12 @@ const OurWorks = () => {
 				>
 					{showAll ? 'Hide Some Projects' : 'Show All Projects'}
 				</button>
+			</div> */}
+			<div>
+				<SectionTitle title="Explore Recent Work" />
+				<div className='flex justify-center'>
+					<img className='w-2/3 sm:w-1/2' src="https://i.ibb.co/7K5xjJp/project.jpg" alt="Projects" />
+				</div>
 			</div>
 		</div>
 	);

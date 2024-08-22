@@ -17,12 +17,29 @@ const Clients = () => {
 					proposed a financial proposal. We believe in quality system
 					design and solution provider to clients. Products Brand’s next.
 				</p>
-				<Marquee pauseOnHover>
+				{/* <Marquee pauseOnHover>
 					{clients.map(client => (
 						<div key={client._id} className="marquee-item -mx-12 md:mx-0">
 							<img className="marquee-image" src={client.image} alt="" />
 						</div>
 					))}
+				</Marquee> */}
+				<Marquee pauseOnHover>
+
+					<div className="marquee-item -mx-12 md:mx-0 my-8">
+						<img className="marquee-image" src="https://i.ibb.co/rxBGYtL/client.jpg" alt="" />
+					</div>
+					<div className="marquee-item -mx-12 md:mx-0 my-8">
+						<img className="marquee-image" src="https://i.ibb.co/rxBGYtL/client.jpg" alt="" />
+					</div>
+					<div className="marquee-item -mx-12 md:mx-0 my-8">
+						<img className="marquee-image" src="https://i.ibb.co/rxBGYtL/client.jpg" alt="" />
+					</div>
+					<div className="marquee-item -mx-12 md:mx-0 my-8">
+						<img className="marquee-image" src="https://i.ibb.co/rxBGYtL/client.jpg" alt="" />
+					</div>
+
+
 				</Marquee>
 			</div>
 		</div>

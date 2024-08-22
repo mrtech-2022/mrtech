@@ -9,17 +9,7 @@ const AboutCompany = () => {
 			{/* top section */}
 			<SectionTopStyle
 				title="About MR Tech"
-				content="MR Tech is a customer-oriented electronic Higher safety
-						security, and customized IT, solution provider, with a
-						far-reaching vision of adding values to the society and
-						industry we operate in. Most of our solutions are backed up by
-						years of market experience and client demand. MR Tech is an
-						Importer, Distributor, system integrator of higher safety and
-						security Products in Bangladesh. MR Tech understand their
-						customer’s requirements and satisfy them by providing unique
-						solutions specifically tailored to individual customer’s need
-						and also enables us to provide unparalleled after-sale
-						service."
+				content="MR Tech is a Simple and customized IT Company (Networking, CCTV, Surveillance, Access Control, Fire Alarm System, Intruder Alarm System, Smart Education System and Products) Service provider In Bangladesh, with a far-reaching vision of adding values to society and industry we operate in. Most of our solutions are backed up by years of market experience and client demand. MT Tech understand their customer’s requirements and satisfy them by providing unique solutions specifically tailored to individual customer’s need and also enables us to provide unparalleled after-sale service."
 				backgroundImage="https://i.ibb.co/H4kpRCj/Network.jpg"
 			/>
 

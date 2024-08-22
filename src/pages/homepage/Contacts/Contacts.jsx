@@ -90,28 +90,34 @@ const Contacts = () => {
 			</div>
 
 			{/* company info */}
-			<div className='grid md:grid-cols-2 xl:grid-cols-3  place-items-center gap-6 lg:gap-0 my-10'>
-				<div className='bg-gray-100 p-12 px-16 shadow-xl'>
+			<div className='grid md:grid-cols-2 xl:grid-cols-3 place-items-center mx-auto gap-6 my-10 max-w-7xl'>
+				<div className='bg-gray-100 p-12 px-16 shadow-xl  items-center h-full w-96'>
 					<div className='flex gap-6 items-center'>
-						<GiRotaryPhone className='bg-darkBlue text-white text-6xl p-2' />
+						<a href="tel:01531946491">
+							<GiRotaryPhone className='bg-darkBlue text-white text-6xl p-2' />
+						</a>
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Call Us.</h1>
 							<p>+880 1531946491</p>
 						</div>
 					</div>
 				</div>
-				<div className='bg-gray-100 p-12 px-16 shadow-xl'>
+				<div className='bg-gray-100 p-12 px-16 shadow-xl flex items-center h-full w-96'>
 					<div className='flex gap-6 items-center'>
-						<MdOutlineMarkEmailUnread className='bg-darkBlue text-white text-6xl p-2' />
+						<a href="mailto:info@mrtech.com.bd">
+							<MdOutlineMarkEmailUnread className='bg-darkBlue text-white text-6xl p-2' />
+						</a>
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Email Us.</h1>
 							<p>info@mrtech.com.bd</p>
 						</div>
 					</div>
 				</div>
-				<div className='bg-gray-100 p-8 px-14 shadow-xl'>
+				<div className='bg-gray-100 p-8 px-16 shadow-xl flex items-center h-full w-96'>
 					<div className='flex gap-6 items-center'>
-						<FaHome className='bg-darkBlue text-white text-6xl p-2' />
+						<a href='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.184943008018!2d90.4288286!3d23.8080628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75c6f4edaed%3A0x27d198cada031f5e!2sMR%20Tech!5e0!3m2!1sen!2sbd!4v1724095327697!5m2!1sen!2sbd' target='blank'>
+							<FaHome className='bg-darkBlue text-white text-6xl p-2' />
+						</a>
 						<div className='text-black'>
 							<h1 className='text-2xl font-bold'>Address</h1>
 							<p className='text-sm'>Evercare Hospital Link<br /> Road
@@ -119,18 +125,19 @@ const Contacts = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
+
+
 
 			{/* contact info */}
 			<div className="-mb-5 mt-8">
 				<div
 					id="contacts"
-					className="f flex flex-col md:flex-row justify-center lg:gap-20 place-items-center py-8"
+					className="flex flex-col md:flex-row justify-center gap-10 lg:gap-20 place-items-center py-8"
 				>
 
 					{/* contact form */}
-					<div className="  p-6 px-8 w-full md:w-[350px] rounded-xl">
+					<div className="bg-white shadow-lg md:shadow-2xl p-6 px-8 w-full md:w-[350px] rounded-xl">
 						<h1 className="text-5xl text-bgBlue text-center my-6 font-bold">
 							Contacts
 						</h1>
@@ -263,7 +270,7 @@ const Contacts = () => {
 					</div>
 
 					{/* google map */}
-					<div>
+					<div className='shadow-2xl'>
 						<iframe
 							className="w-96 p-2 sm:w-[450px] md:w-[400px] lg:w-[650px] h-96"
 							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.184943008018!2d90.4288286!3d23.8080628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75c6f4edaed%3A0x27d198cada031f5e!2sMR%20Tech!5e0!3m2!1sen!2sbd!4v1724095327697!5m2!1sen!2sbd"

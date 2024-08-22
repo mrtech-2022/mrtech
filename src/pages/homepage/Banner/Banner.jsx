@@ -1,15 +1,16 @@
 import CountUp from 'react-countup';
-import { HashLink } from 'react-router-hash-link';
 import useServices from '../../../hooks/useServices';
 import useClients from '../../../hooks/useClients';
 import useProjects from '../../../hooks/useProjects';
 import Particle from '../../../components/Particles/Particles';
 import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSection';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
 	const [services] = useServices();
 	const [clients] = useClients();
 	const [projects] = useProjects();
+	const navigate = useNavigate()
 
 
 	return (
@@ -23,13 +24,13 @@ const Banner = () => {
 				<div className="flex flex-col gap-36">
 					{/* Intro text */}
 					<div className="text-center md:w-1/2 mx-3 md:mx-auto">
-						<h1 className="text-sky-600 font-semibold text-4xl mb-5 mt-20 sm:mt-0">
+						<h1 className="text-[#17B8ED] font-semibold text-4xl md:text-5xl mb-5 mt-20 sm:mt-0">
 							Grow Your Fantastic Network
 						</h1>
 						<p className="text-white">
 							Allah is the owner of everything and security. Then we will be careful. The threat is very real and the threat of attack is imminent. So MR Tech is created with the sole purpose of providing security to the clients if Allah wills.
 						</p>
-						<button onClick={() => scrollToSection('about')} className="bg-textPrimary p-3 px-7 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all duration-300">
+						<button onClick={() => scrollToSection('about', navigate)} className="bg-textPrimary p-3 px-7 rounded-xl my-5 text-white font-bold hover:bg-textSecondary transition-all duration-300">
 							Get Started
 						</button>
 					</div>
