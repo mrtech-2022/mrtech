@@ -1,0 +1,45 @@
+/* Products page specific styles */
+
+/* Override the hidden display style for the nested dropdown */
+.category-options-container .nested-dropdown-content {
+    display: block !important;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+/* Apply the brand styles to the category options as buttons */
+.category-options-container .nested-dropdown-content li {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    background-color: white;
+    border: 2px solid #1778BC;
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 0 10px 5px 0;
+}
+
+.category-options-container .nested-dropdown-content li:hover{
+    background-color: #1778BC;
+    color: white;
+    transition: all 0.3s;
+} 
+
+.category-options-container .nested-dropdown-content li a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid var(--textSecondary);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--textSecondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+

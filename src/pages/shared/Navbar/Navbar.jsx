@@ -5,10 +5,14 @@ import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import './Navbar.css'
 import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSection';
+import { AccessoriesNavOptions, MonitorNavOptions, NetworkNavOptions, PcNavOptions, SecurityNavOptions, ServerNavOptions, StorageNavOptions } from './NavOptions';
+import { MdOutlineArrowRight } from "react-icons/md";
+
 
 const NavBar = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [activeCategory, setActiveCategory] = useState(null);
 	const navigate = useNavigate()
 
 	const toggleDrawer = () => {
@@ -38,6 +42,16 @@ const NavBar = () => {
 		}
 	};
 
+
+	const handleMouseEnter = (category) => {
+		setActiveCategory(category);
+	};
+
+	const handleMouseLeave = () => {
+		setActiveCategory(null);
+	};
+
+
 	const listing = (
 		<>
 			<li className="group text-white hover:text-textPrimary flex cursor-pointer flex-col " onClick={() => { scrollToHome(); toggleDrawer() }}>
@@ -46,10 +60,12 @@ const NavBar = () => {
 				</Link>
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
+
 			{/* About MRTech Dropdown */}
 			<li className="navbar-item group cursor-pointer text-white hover:text-textPrimary">
 				<button className="relative flex items-center gap-1">
 					<span>About MRTech</span>
+
 					<svg
 						className="transition-transform duration-300"
 						xmlns="http://www.w3.org/2000/svg"
@@ -66,9 +82,9 @@ const NavBar = () => {
 					</svg>
 				</button>
 				<div className="hover-area"></div>
-				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg bg-white p-2  ml-8 sm:ml-16 lg:ml-8 text-black lg:mt-5">
+				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg py-2  ml-8 sm:ml-16 lg:ml-4 text-black lg:mt-5">
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/about-mrtech">About US</Link>
+						<Link to="/about-us">About US</Link>
 					</li>
 					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 						<Link to="/team">Our Team</Link >
@@ -77,8 +93,10 @@ const NavBar = () => {
 						<Link to="/company-documents">Company Documents</Link>
 					</li>
 				</ul>
+				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
 
+			{/* Services */}
 			<li className="group flex cursor-pointer flex-col text-white hover:text-textPrimary" onClick={() => {
 				toggleDrawer();
 				scrollToSection('services', navigate)
@@ -110,7 +128,7 @@ const NavBar = () => {
 					</svg>
 				</button>
 				{openDropdown === 'services' && (
-					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white p-2 text-black">
+					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white py-2 text-black">
 						<li className="px-3 hover:text-textPrimary">
 							<Link to="/transport">Transport</Link>
 						</li>
@@ -123,126 +141,136 @@ const NavBar = () => {
 			</li> */}
 
 			{/* Product Dropdown */}
-			<li className="navbar-item group cursor-pointer text-white hover:text-textPrimary">
-				<button className="relative flex items-center gap-1">
-					<span>Product</span>
-					<svg
-						className="transition-transform duration-300"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<path d="M6 9l6 6 6-6" />
-					</svg>
-
-				</button>
+			<li
+				className="navbar-item group cursor-pointer text-white hover:text-textPrimary"
+				onMouseEnter={() => handleMouseEnter('products')}
+				onMouseLeave={handleMouseLeave}
+			>
+				<Link to="/products">
+					<button className="relative flex items-center gap-1">
+						<span>Products</span>
+						<svg
+							className="transition-transform duration-300"
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<path d="M6 9l6 6 6-6" />
+						</svg>
+					</button>
+				</Link>
 				<div className="hover-area"></div>
-				<ul className="dropdown-content uppercase absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white p-2 ml-10 sm:ml-16 lg:ml-8 text-black lg:mt-5">
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/about-mrtech">
-							Security
-							{/* HD CC camera
-								    hikvision,dahua
-								ip camera
-									hikvision, dahua
-								dvr
-									hikvision, jovision
-								nvr
-									hikvision, dahua
-								xvr 
-									dahua, uniview, jovision
-								cc camera excessories
+				<ul
+					className={`dropdown-content absolute top-10 z-10 w-52 space-y-2 rounded-lg bg-white py-2 ml-10 sm:ml-16 lg:ml-4 text-black lg:mt-5 ${activeCategory ? 'block' : 'hidden'
+						}`}
+					onMouseEnter={() => handleMouseEnter('products')}
+					onMouseLeave={handleMouseLeave}
+				>
+					{/* Security Options */}
+					<Link to="/products/security">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>Security</span>
+								{activeCategory === 'products' && <SecurityNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
 
-								portable wifi camera
-									TP-LINK, xiaomi, tenda, sri home, dahua, hikvision, jovision, uniview */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/team">
-							{/* Networking
-								Router
-									tp-link, tenda, net gear, d-link, mi, asos, cisco, mikrotik 
-								media converter
-									d-link, tp-link
-								onu
-								network cable
-									utp cable, fiber optic cable
-								switch
-									d-link, tplink, tenda, netgear, hikvision, dahua, cisco, mikrotik
-								access point & range extend
-									tenda, d-link, tplink, netgear, mikrotik
-								pocket router
-									tplink, huawei, mi, */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/company-documents">
-							Server & Storage
-							{/* Server work station server rack server
-									hdd server
-									hdd bag server
-									ram server
-									ssd server
-									power supply */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/company-documents">
-							Accessories
-							{/* keyboard
-								mouse
-								cable
-									usb cable, hdmi cable, vga cable
-								converter
-								memory Card	
-									transcnd, samsung, adata, 
-								bluetooth receiver
-								thermal paste */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/company-documents">
-							Monitor/Tv
-							{/* led tv
-									smart tv
-									android tv */}
-							{/* monitor brand msi
-										lg, asos, hp, dell , gigabyte */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/company-documents">
-							Pc Component
-							{/* processor
-									amd, intel
-								mohterboard
-									gigabyte, msi, asus
-								desktop ram 
-									corsiar, gigabyte, gscale, 	kingstone, hp, transent, team 
-								powersupply
-									corsiar, gigabyte, asus, thermal take
-								casing
-									corsiar, asus, msi, gigabyte */}
-						</Link>
-					</li>
-					<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
-						<Link to="/company-documents">
-							Storage
-							{/* hdd
-									toshiba, western digital, 
-								portable hdd
-									toshiba, transent, western digital, adata
-								ssd 
-									gigabyte, hp, transcnd, samsung, seagate, western digital, kingstone, corsiar
-								portable ssd */}
-						</Link>
-					</li>
+					{/* Networking option */}
+					<Link to="/products/networking">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>Networking</span>
+								{activeCategory === 'products' && <NetworkNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
+
+					{/* Server option */}
+					<Link to="/products/server">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>Server & Storage</span>
+								{activeCategory === 'products' && <ServerNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
+
+					{/* Accessories */}
+					<Link to="/products/accessories">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>Accessories</span>
+								{activeCategory === 'products' && <AccessoriesNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
+
+					{/* Monitor/tv */}
+					<Link to="/products/monitor_tv">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>Monitor/TV</span>
+								{activeCategory === 'products' && <MonitorNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
+
+					{/* Pc Component */}
+					<Link to="/products/pc_component">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+								<span>PC Component</span>
+								{activeCategory === 'products' && <PcNavOptions />}
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
+
+					{/* Storage */}
+					<Link to="/products/storage">
+						<li
+							className="px-3 hover:text-textPrimary"
+							onClick={() => setActiveCategory('products')}
+						>
+							<div className='flex justify-between'>
+
+								<span>Storage</span>
+								{activeCategory === 'products' && <StorageNavOptions />}
+
+								<MdOutlineArrowRight className='mt-1' />
+							</div>
+						</li>
+					</Link>
 				</ul>
 
 				<span className="hidden md:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
@@ -266,11 +294,11 @@ const NavBar = () => {
 		</>
 	);
 
-	const navBarClasses = `fixed top-0 w-full p-2 z-50 transition-all transform bg-black  ${isScrolled ? 'shadow-lg' : ''}`;
+	const navBarClasses = `fixed top-0 w-full py-2 z-50 transition-all transform bg-black ${isScrolled ? 'shadow-lg' : ''}`;
 
 	return (
 		<nav className={navBarClasses}>
-			<div className="flex items-center justify-between mx-0 md:mx-10">
+			<div className="flex items-center justify-between mx-5 md:mx-10">
 				<div className="flex items-center" onClick={() => { scrollToHome() }}>
 					<Link to="/">
 						<img className="w-16 md:w-28" src={Logo} alt="Mr Tech Logo" />

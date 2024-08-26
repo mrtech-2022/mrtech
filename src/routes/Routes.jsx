@@ -9,6 +9,14 @@ import Documents from '../pages/otherPage/Documents/Documents';
 import ServiceDetails from '../pages/otherPage/ServiceDetails/ServiceDetails';
 import Gallery from '../pages/otherPage/Gallery/Gallery';
 import Career from '../pages/otherPage/Career/Career';
+import AdminHome from '../pages/AdminPage/AdminHome';
+import Dashboard from '../layout/Dashboard';
+import AllServices from '../pages/AdminPage/AllServices';
+import Products from '../pages/otherPage/Products/Products';
+import CartItems from '../pages/otherPage/CartItems/CartItems';
+import Checkout from '../pages/otherPage/Checkout/Checkout';
+
+const secretRoute = import.meta.env.VITE_SECRET_ROUTE;
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +28,7 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: 'about-mrtech',
+				path: 'about-us',
 				element: <AboutCompany />,
 			},
 			{
@@ -50,9 +58,41 @@ const router = createBrowserRouter([
 			{
 				path: 'career',
 				element: <Career />
+			},
+			{
+				path: '/products',
+				element: <Products />
+			},
+			{
+				path: '/products/:category',
+				element: <Products />
+
+			},
+			{
+				path: '/products/:category/:subcategory/:brand?',
+				element: <Products />
+
+			},
+			{
+				path: '/cart',
+				element: <CartItems />
+			},
+			{
+				path: '/checkout',
+				element: <Checkout />
 			}
 		],
 	},
+	{
+		path: secretRoute,
+		element: <Dashboard />,
+		children: [
+			{
+				path: 'all-services',
+				element: <AllServices />
+			}
+		]
+	}
 ]);
 
 export default router;

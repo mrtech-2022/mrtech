@@ -21,7 +21,7 @@ const Footer = () => {
 				<div className="flex flex-col justify-center ">
 					<Link to="/">
 						<img
-							className="w-1/4"
+							className="w-1/3"
 							src={logo}
 							alt="MR Tech"
 						/>
@@ -86,7 +86,7 @@ const Footer = () => {
 						<li
 							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"
 						>
-							<Link to="/about-mrtech">About US</Link>
+							<Link to="/about-us">About US</Link>
 						</li>
 						<li
 							className="text-gray-400 p-1 hover:text-red-500 flex items-center text-md gap-1 transition-all duration-300 font-semibold"

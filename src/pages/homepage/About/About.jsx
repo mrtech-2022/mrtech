@@ -12,15 +12,7 @@ const About = () => {
 			<div className="w-full text-center">
 				<SectionTitle title="Our Values" />
 				<p className="mx-4 md:mx-16">
-					MR Tech is a Simple and customized IT Company (Networking, CCTV,
-					Surveillance, Access Control, Fire Alarm System, Intruder Alarm
-					System, Smart Education System and Products) Service provider In
-					Bangladesh, with a far-reaching vision of adding values to society
-					and industry we operate in. Most of our solutions are backed up by
-					years of market experience and client demand. MT Tech understand
-					their customer’s requirements and satisfy them by providing unique
-					solutions specifically tailored to individual customer’s need and
-					also enables us to provide unparalleled after-sale service.
+					Welcome to our security company. Security is very important especially for individuals, organizations, devices & software. Through this company, we will give you security advice and explore the world of security in its practical way. So, let's start this cyber security journey together, where you can make yourself, your organization, devices and software digitally secure. You can even put yourself and the country on a digital smart security path.
 				</p>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center mt-20 mx-5 lg:w-11/12 xl:w-10/12 mx-auto">

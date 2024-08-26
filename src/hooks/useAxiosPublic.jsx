@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosPublic = axios.create({
-	baseURL: 'https://mr-tech-server.onrender.com',
+	// baseURL: 'https://mr-tech-server.onrender.com',
+	baseURL: 'https://mrtech-gold.vercel.app',
 	// baseURL: 'http://localhost:5000',
 });
 

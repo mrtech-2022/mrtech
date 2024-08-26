@@ -24,3 +24,19 @@
 		"image": "https://i.ibb.co/gM0w8cn/work-3"
 	}
 ]
+
+
+
+
+
+{
+  "name": "TP-Link VIGI C230I (2.8MM) 3MP IR Dome Network IP Camera",
+  "image": "https://i.ibb.co/bLcK7tK/ip.jpg",
+  "description": "Image Sensor: 1/2.8” Progressive Scan CMOS > Resolution: Max. 3 MP (2304 × 1296) at 25/30 fps. > Lens: 2.8mm, Aperture: F2.2, IR Distance: 45 meters > Features: PoE, IP67, IK10, DWDR, 3D DNR, Smart Detection",
+  "regularPrice": 3750,
+  "specialPrice": 3650,
+  "brand": "tp-link",
+  "category": "security",
+  "subcategory": "ip-camera",
+  "status": "instock"
+}

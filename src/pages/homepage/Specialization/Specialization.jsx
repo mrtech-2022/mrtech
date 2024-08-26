@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const Specialization = () => {
 	const [services] = useServices();
-
 	return (
 		<div>
 			<div>
