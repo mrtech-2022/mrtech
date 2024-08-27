@@ -23,7 +23,7 @@ const Dashboard = () => {
                         <label
                             htmlFor="my-drawer"
                             title="Dashboard Element"
-                            className="btn flex text-[#F7A582] hover:bg-transparent justify-end bg-slate-200 text-4xl font-bold lg:hidden"
+                            className="btn flex text-textSecondary hover:bg-transparent justify-end bg-slate-200 text-4xl font-bold lg:hidden"
                         >
                             <GiHamburgerMenu></GiHamburgerMenu>
                         </label>
@@ -50,33 +50,41 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink
                                         className="text-xl text-gray-500 font-bold"
-                                        to="/dashboard/addDoctor"
+                                        to={`/${secretRoute}/all-products`}
                                     >
-                                        All Product
+                                        All Products
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink
                                         className="text-xl text-gray-500 font-bold"
-                                        to="/dashboard/manageDoctors"
+                                        to={`/${secretRoute}/add-product`}
                                     >
                                         Add Product
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink
                                         className="text-xl text-gray-500 font-bold"
                                         to="/dashboard/allAppoinment"
                                     >
                                         Update Product
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink
                                         className="text-xl text-gray-500 font-bold"
                                         to="/dashboard/statistics"
                                     >
                                         Statistics
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        className="text-xl text-gray-500 font-bold"
+                                        to="/"
+                                    >
+                                        Home
                                     </NavLink>
                                 </li>
                             </div>

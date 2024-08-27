@@ -55,28 +55,28 @@ export const NetworkNavOptions = () => (
 
 export const ServerNavOptions = () => (
     <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
-        <Link to='/products/server/server'>
+        <Link to='/products/server_storage_storage/server'>
             <li className="px-3 hover:text-textPrimary">Server</li>
         </Link>
-        <Link to='/products/server/work-station'>
+        <Link to='/products/server_storage/work-station'>
             <li className="px-3 hover:text-textPrimary">Work Station</li>
         </Link>
-        <Link to='/products/server/server-rack'>
+        <Link to='/products/server_storage/server-rack'>
             <li className="px-3 hover:text-textPrimary">Server Rack</li>
         </Link>
-        <Link to='/products/server/hdd-server'>
+        <Link to='/products/server_storage/hdd-server'>
             <li className="px-3 hover:text-textPrimary">HDD Server</li>
         </Link>
-        <Link to='/products/server/hdd-bag-server'>
+        <Link to='/products/server_storage/hdd-bag-server'>
             <li className="px-3 hover:text-textPrimary">HDD Bag Server</li>
         </Link>
-        <Link to='/products/server/ram-server'>
+        <Link to='/products/server_storage/ram-server'>
             <li className="px-3 hover:text-textPrimary">Ram Server</li>
         </Link>
-        <Link to='/products/server/ssd-server'>
+        <Link to='/products/server_storage/ssd-server'>
             <li className="px-3 hover:text-textPrimary">SSD Server</li>
         </Link>
-        <Link to='/products/server/power-supply'>
+        <Link to='/products/server_storage/power-supply'>
             <li className="px-3 hover:text-textPrimary">Power Supply</li>
         </Link>
     </ul>
@@ -157,7 +157,7 @@ export const StorageNavOptions = () => (
 export const categoryNavOptions = {
     security: SecurityNavOptions,
     networking: NetworkNavOptions,
-    server: ServerNavOptions,
+    server_storage: ServerNavOptions,
     accessories: AccessoriesNavOptions,
     monitor_tv: MonitorNavOptions,
     pc_component: PcNavOptions,

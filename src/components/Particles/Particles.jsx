@@ -28,7 +28,7 @@ export default function Particle() {
                         pointerEvents: 'none', // Ensures particles do not interfere with UI interactions
                     }}
                     options={{
-                        fpsLimit: 120,
+                        fpsLimit: 60,
                         interactivity: {
                             events: {
                                 onClick: {

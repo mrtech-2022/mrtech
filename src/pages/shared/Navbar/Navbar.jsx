@@ -201,7 +201,7 @@ const NavBar = () => {
 					</Link>
 
 					{/* Server option */}
-					<Link to="/products/server">
+					<Link to="/products/server_storage">
 						<li
 							className="px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
