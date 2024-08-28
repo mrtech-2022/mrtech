@@ -2,10 +2,14 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import teamImg from '/assets/team.jpg'
 import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
+import { Helmet } from 'react-helmet';
 
 const Team = () => {
 	return (
 		<div>
+			<Helmet>
+				<title>Team - MR Tech</title>
+			</Helmet>
 			<SectionTopStyle
 				title="Our Team"
 				content="We celebrate diversity as our strength and believe in creating an

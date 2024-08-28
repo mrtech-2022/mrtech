@@ -17,6 +17,7 @@ import CartItems from '../pages/otherPage/CartItems/CartItems';
 import Checkout from '../pages/otherPage/Checkout/Checkout';
 import AddProduct from '../pages/AdminPage/AddProduct';
 import AllProducts from '../pages/AdminPage/AllProducts';
+import Statistics from '../pages/AdminPage/Statistics';
 
 const secretRoute = import.meta.env.VITE_SECRET_ROUTE;
 
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
 			{
 				path: 'all-products',
 				element: <AllProducts />
+			},
+			{
+				path: 'statistics',
+				element: <Statistics />
 			}
 		]
 	}

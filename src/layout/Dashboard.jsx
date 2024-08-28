@@ -74,7 +74,7 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink
                                         className="text-xl text-gray-500 font-bold"
-                                        to="/dashboard/statistics"
+                                        to={`/${secretRoute}/statistics`}
                                     >
                                         Statistics
                                     </NavLink>

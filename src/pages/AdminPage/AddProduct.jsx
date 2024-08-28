@@ -3,6 +3,7 @@ import { categories } from './cat_subcat';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm();
@@ -83,6 +84,9 @@ const AddProduct = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
+            <Helmet>
+                <title>AddProduct - MR Tech</title>
+            </Helmet>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md"

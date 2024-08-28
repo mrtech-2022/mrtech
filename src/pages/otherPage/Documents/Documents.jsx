@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import SectionTopStyle from "../../../components/SectionTopStyle/SectionTopStyle";
 
 const Documents = () => {
 	return (
 		<div className="h-screen">
+			<Helmet>
+				<title>Company-Documents - MR Tech</title>
+			</Helmet>
 			<SectionTopStyle
 				title="MR Tech Documents"
 				content="MR Tech is a customer-oriented It setup, security, product and customized IT  solution provider in Bangladesh. Here you can find all our company documents."

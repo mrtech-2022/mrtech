@@ -5,6 +5,7 @@ import contactImg from '/assets/Contact1.jpg'
 import { GiRotaryPhone } from "react-icons/gi";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { FaHome } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -65,6 +66,9 @@ const Contacts = () => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Contact Us - MR Tech</title>
+			</Helmet>
 			{/* cover image */}
 			<div
 				className="relative about bg-cover bg-no-repeat bg-center p-36 text-bgBlue"

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import useProducts from "../../hooks/useProducts";
 
 const AllProducts = () => {
@@ -5,7 +6,9 @@ const AllProducts = () => {
 
     return (
         <div>
-
+            <Helmet>
+                <title>AllProducts - MR Tech</title>
+            </Helmet>
             <h1 className="text-3xl mt-6 ml-10 font-bold">Total Products: {products.length}</h1>
 
             <div className="overflow-x-auto m-2 md:m-10 bg-white rounded-lg">

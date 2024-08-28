@@ -1,11 +1,14 @@
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import coverImg from '/assets/Cover.png';
 import camera from '/assets/Camera2.jpg';
 import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
+import { Helmet } from 'react-helmet';
 
 const Gallery = () => {
 	return (
-		<div className="">
+		<div>
+			<Helmet>
+				<title>Gallery - MR Tech</title>
+			</Helmet>
 			<SectionTopStyle
 				title="Gallery"
 				content="This is our gallery where you can get all our activity images. Visit and enjoy."

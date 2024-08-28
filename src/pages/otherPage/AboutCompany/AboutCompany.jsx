@@ -2,10 +2,14 @@ import { TbDeviceDesktopBolt } from 'react-icons/tb';
 import { LuTarget } from 'react-icons/lu';
 import { MdPushPin } from 'react-icons/md';
 import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
+import { Helmet } from 'react-helmet';
 
 const AboutCompany = () => {
 	return (
 		<div>
+			<Helmet>
+				<title>About - MR Tech</title>
+			</Helmet>
 			{/* top section */}
 			<SectionTopStyle
 				title="About MR Tech"

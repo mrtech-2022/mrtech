@@ -5,8 +5,10 @@ import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import './Navbar.css'
 import { scrollToSection } from '../../../components/ScrollToSection/ScrollToSection';
+import { FaShoppingCart } from "react-icons/fa";
 import { AccessoriesNavOptions, MonitorNavOptions, NetworkNavOptions, PcNavOptions, SecurityNavOptions, ServerNavOptions, StorageNavOptions } from './NavOptions';
 import { MdOutlineArrowRight } from "react-icons/md";
+import { getCartItems } from '../../../components/Cart/Cart';
 
 
 const NavBar = () => {
@@ -14,6 +16,8 @@ const NavBar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [activeCategory, setActiveCategory] = useState(null);
 	const navigate = useNavigate()
+	const cartItems = getCartItems()
+
 
 	const toggleDrawer = () => {
 		setIsDrawerOpen(!isDrawerOpen);
@@ -309,10 +313,24 @@ const NavBar = () => {
 						{listing}
 					</ul>
 				</div>
-				<div className="lg:hidden flex items-center justify-end ml-auto">
-					<button onClick={toggleDrawer} className="text-4xl font-bold text-white">
-						<IoMenu />
-					</button>
+				{/* cart/menu */}
+				<div className='flex items-center gap-3'>
+					{/* cart */}
+					<Link to="/cart">
+						<div className="relative w-fit">
+							<span className='text-white text-2xl'>
+								<FaShoppingCart />
+							</span>
+							<span className="absolute -right-2 -top-3 flex size-5 items-center justify-center rounded-full bg-red-400 text-center text-[14px] font-bold text-white">{cartItems.length}</span>
+						</div>
+					</Link>
+
+					{/* menu icon */}
+					<div className="lg:hidden flex items-center justify-end ml-auto">
+						<button onClick={toggleDrawer} className="text-4xl font-bold text-white">
+							<IoMenu />
+						</button>
+					</div>
 				</div>
 			</div>
 

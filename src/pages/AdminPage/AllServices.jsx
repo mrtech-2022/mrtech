@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
 import useServices from "../../hooks/useServices";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Swal from 'sweetalert2'
 
 const AllServices = () => {
-    const axiosSecure = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
 
-    const [services] = useServices();
-    console.log(services);
+    const [services, refetch] = useServices();
 
     // const makeAdmin = async (email) => {
     //     Swal.fire({
@@ -33,30 +33,30 @@ const AllServices = () => {
     //     });
     // };
 
-    // const deleteservice = async (id, email) => {
-    //     Swal.fire({
-    //         title: `Are you sure? want to delete service- ${email}`,
-    //         text: "",
-    //         icon: "warning",
-    //         showCancelButton: true,
-    //         confirmButtonColor: "#3085d6",
-    //         cancelButtonColor: "#d33",
-    //         confirmButtonText: "Yes, delete it!",
-    //     }).then(async (result) => {
-    //         if (result.isConfirmed) {
-    //             const result = await axiosSecure.delete(`service/${id}`);
-    //             // console.log(result);
-    //             if (result.data.deletedCount) {
-    //                 refetch();
-    //                 Swal.fire({
-    //                     title: "Deleted!",
-    //                     text: "Your file has been deleted.",
-    //                     icon: "success",
-    //                 });
-    //             }
-    //         }
-    //     });
-    // };
+    const deleteservice = async (id, name) => {
+        Swal.fire({
+            title: `Are you sure? want to delete service- ${name}`,
+            text: "",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                const result = await axiosPublic.delete(`services/${id}`);
+                // console.log(result);
+                if (result.data.deletedCount) {
+                    refetch();
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success",
+                    });
+                }
+            }
+        });
+    };
 
     return (
         <div>
@@ -74,7 +74,7 @@ const AllServices = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Image</th>
-                            <th>Role</th>
+                            {/* <th>Role</th> */}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -92,11 +92,11 @@ const AllServices = () => {
                                         />
                                     </div>
                                 </td>
-                                <td></td>
+                                {/* <td></td> */}
 
                                 <td>
                                     <button
-                                        onClick={() => deleteservice(service._id, service.email)}
+                                        onClick={() => deleteservice(service._id, service.name)}
                                         className="btn bg-red-700 text-white  hover:bg-red-600"
                                     >
                                         Delete service

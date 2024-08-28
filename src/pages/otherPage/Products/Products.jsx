@@ -6,6 +6,7 @@ import './Products.css';
 import { addToCart } from '../../../components/Cart/Cart';
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Products = () => {
     const { category, subcategory, brand: brandParam } = useParams();
@@ -46,6 +47,9 @@ const Products = () => {
 
     return (
         <div className='min-h-screen mt-16'>
+            <Helmet>
+                <title>Products - MR Tech</title>
+            </Helmet>
             <div className='m-6 md:m-10 md:my-24'>
                 {!subcategory && CategoryOptionsComponent && (
                     <div className='max-w-screen-2xl mx-auto category-options-container md:flex items-center mb-4'>
