@@ -316,7 +316,7 @@ const NavBar = () => {
 	const navBarClasses = `fixed top-0 w-full py-2 z-50 transition-all transform bg-black ${isScrolled ? 'shadow-lg' : ''}`;
 
 	return (
-		<nav className={navBarClasses}>
+		<nav className={`${navBarClasses}`}>
 			<div className="flex items-center justify-between mx-5 md:mx-10">
 				<div className="flex items-center" onClick={() => { scrollToHome() }}>
 					<Link to="/">
@@ -351,7 +351,7 @@ const NavBar = () => {
 
 			{isDrawerOpen && (
 				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden ">
-					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-[80%] sm:w-[60%] h-screen bg-black bg-opacity-90 p-4 font-bold ">
+					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-[80%] sm:w-[60%] min-h-[2000px]  bg-black bg-opacity-95 p-4 font-bold">
 						<button
 							className="flex justify-end text-white font-bold text-xl "
 							onClick={toggleDrawer}

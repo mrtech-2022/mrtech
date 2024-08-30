@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 export const SecurityNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-4 sm:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/security/hd-cc-camera'>
             <li className="px-3 hover:text-textPrimary">HD CC Camera</li>
         </Link>
@@ -28,7 +28,7 @@ export const SecurityNavOptions = () => (
 );
 
 export const NetworkNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-8 sm:-ml-10 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/networking/router'>
             <li className="px-3 hover:text-textPrimary">Router</li>
         </Link>
@@ -54,7 +54,7 @@ export const NetworkNavOptions = () => (
 );
 
 export const ServerNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-28 sm:-ml-20 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/server_storage_storage/server'>
             <li className="px-3 hover:text-textPrimary">Server</li>
         </Link>
@@ -83,7 +83,7 @@ export const ServerNavOptions = () => (
 )
 
 export const AccessoriesNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-16 sm:-ml-12 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/accessories/mouse'>
             <li className="px-3 hover:text-textPrimary">Mouse</li>
         </Link>
@@ -106,7 +106,7 @@ export const AccessoriesNavOptions = () => (
 )
 
 export const MonitorNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-28 sm:-ml-12 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/monitor_tv/smart-tv'>
             <li className="px-3 hover:text-textPrimary">Smart TV</li>
         </Link>
@@ -117,7 +117,7 @@ export const MonitorNavOptions = () => (
 )
 
 export const PcNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-32 sm:-ml-20 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/pc_component/processor'>
             <li className="px-3 hover:text-textPrimary">Processor</li>
         </Link>
@@ -137,7 +137,7 @@ export const PcNavOptions = () => (
 )
 
 export const StorageNavOptions = () => (
-    <ul className="nested-dropdown-content absolute top-0 left-full -ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
+    <ul className="nested-dropdown-content absolute top-0 left-full -ml-20 sm:-ml-8 lg:-ml-6 mt-1 md:w-48 shadow-2xl space-y-2 rounded-lg bg-white py-2 text-black">
         <Link to='/products/storage/hdd'>
             <li className="px-3 hover:text-textPrimary">HDD</li>
         </Link>
