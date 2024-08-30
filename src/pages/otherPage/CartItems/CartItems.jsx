@@ -15,25 +15,8 @@ const CartItems = () => {
     }, []);
 
     const handleRemove = (productId) => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You want to delete this product from your cart?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your cart has been deleted.",
-                    icon: "success"
-                });
-                removeFromCart(productId);
-                setCartItems(cartItems.filter(item => item._id !== productId));
-            }
-        });
+        removeFromCart(productId);
+        setCartItems(cartItems.filter(item => item._id !== productId));
     };
 
     const handleClearCart = () => {

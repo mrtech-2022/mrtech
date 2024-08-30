@@ -1,10 +1,9 @@
-
 export const getCartItems = () => {
     const cart = localStorage.getItem('cart');
     return cart ? JSON.parse(cart) : [];
 };
 
-export const addToCart = (product) => {
+export const addToCart = (product, callback) => {
     const cart = getCartItems();
     const existingProductIndex = cart.findIndex(item => item._id === product._id);
 
@@ -15,21 +14,24 @@ export const addToCart = (product) => {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (callback) callback(); // Trigger the callback after updating the cart
 };
 
-export const removeFromCart = (productId) => {
+export const removeFromCart = (productId, callback) => {
     let cart = getCartItems();
     cart = cart.filter(item => item._id !== productId);
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (callback) callback(); // Trigger the callback after updating the cart
 };
 
-export const updateCartItemQuantity = (productId, newQuantity) => {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+export const updateCartItemQuantity = (productId, newQuantity, callback) => {
+    let cart = getCartItems();
     cart = cart.map(item => item._id === productId ? { ...item, quantity: newQuantity } : item);
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (callback) callback(); // Trigger the callback after updating the cart
 };
 
-
-export const clearCart = () => {
+export const clearCart = (callback) => {
     localStorage.removeItem('cart');
+    if (callback) callback(); // Trigger the callback after clearing the cart
 };
