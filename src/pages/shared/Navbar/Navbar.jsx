@@ -9,7 +9,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AccessoriesNavOptions, MonitorNavOptions, NetworkNavOptions, PcNavOptions, SecurityNavOptions, ServerNavOptions, StorageNavOptions } from './NavOptions';
 import { MdOutlineArrowRight } from "react-icons/md";
 import { getCartItems } from '../../../components/Cart/Cart';
-
+import { toggleDrawer } from '../../../utils/toggleDrawer';
 
 const NavBar = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -28,9 +28,7 @@ const NavBar = () => {
 
 
 
-	const toggleDrawer = () => {
-		setIsDrawerOpen(!isDrawerOpen);
-	};
+
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -123,41 +121,6 @@ const NavBar = () => {
 				Services
 				<span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
 			</li>
-			{/* <li ref={servicesRef} className="relative group cursor-pointer">
-				<button
-					onClick={() => handleDropdownClick('services')}
-					className="relative flex items-center gap-1"
-				>
-					<span>Services</span>
-					<svg
-						className={`transition-transform duration-300 ${
-							openDropdown === 'services' ? '' : 'rotate-180'
-						}`}
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<path d="m18 15-6-6-6 6" />
-					</svg>
-				</button>
-				{openDropdown === 'services' && (
-					<ul className="absolute top-10 z-10 w-44 space-y-2 rounded-lg bg-white py-2 text-black">
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/transport">Transport</Link>
-						</li>
-						<li className="px-3 hover:text-textPrimary">
-							<Link to="/management">Management</Link>
-						</li>
-					</ul>
-				)}
-				<span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
-			</li> */}
 
 			{/* Product Dropdown */}
 			<li
@@ -192,7 +155,7 @@ const NavBar = () => {
 					onMouseLeave={handleMouseLeave}
 				>
 					{/* Security Options */}
-					<Link to="/products/security">
+					<Link className='hidden lg:inline' to="/products/security">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -204,9 +167,22 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					{/* only navigate when click on text for small device */}
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+							<Link className='-mt-[7px]' to="/products/security">
+								<span>Security</span>
+							</Link>
+							{activeCategory === 'products' && <SecurityNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Networking option */}
-					<Link to="/products/networking">
+					<Link className='hidden lg:inline' to="/products/networking">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -218,9 +194,22 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					{/* only navigate when click on text for small device */}
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+							<Link className='-mt-[7px]' to="/products/networking">
+								<span>Networking</span>
+							</Link>
+							{activeCategory === 'products' && <NetworkNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Server option */}
-					<Link to="/products/server_storage">
+					<Link className='hidden lg:inline' to="/products/server_storage">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -232,9 +221,22 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					{/* only navigate when click on text for small device */}
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex w-full justify-between'>
+							<Link className='-mt-[7px]' to="/products/server_storage">
+								<span>Server & Storage</span>
+							</Link>
+							{activeCategory === 'products' && <ServerNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Accessories */}
-					<Link to="/products/accessories">
+					<Link className='hidden lg:inline' to="/products/accessories">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -246,9 +248,21 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+							<Link className='-mt-[7px]' to="/products/accessories">
+								<span>Accessories</span>
+							</Link>
+							{activeCategory === 'products' && <AccessoriesNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Monitor/tv */}
-					<Link to="/products/monitor_tv">
+					<Link className='hidden lg:inline' to="/products/monitor_tv">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -260,9 +274,21 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+							<Link className='-mt-[7px]' to="/products/monitor_tv">
+								<span>Monitor/TV</span>
+							</Link>
+							{activeCategory === 'products' && <MonitorNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Pc Component */}
-					<Link to="/products/pc_component">
+					<Link className='hidden lg:inline' to="/products/pc_component">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -274,9 +300,21 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+							<Link className='-mt-[7px]' to="/products/pc_component">
+								<span>PC Component</span>
+							</Link>
+							{activeCategory === 'products' && <PcNavOptions />}
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 
 					{/* Storage */}
-					<Link to="/products/storage">
+					<Link className='hidden lg:inline' to="/products/storage">
 						<li
 							className="px-2 sm:px-3 hover:text-textPrimary"
 							onClick={() => setActiveCategory('products')}
@@ -290,6 +328,20 @@ const NavBar = () => {
 							</div>
 						</li>
 					</Link>
+					<li
+						className="lg:hidden px-2 sm:px-3 hover:text-textPrimary"
+						onClick={() => setActiveCategory('products')}
+					>
+						<div className='flex justify-between'>
+
+							<Link className='-mt-[7px]' to="/products/storage">
+								<span>Storage</span>
+							</Link>
+							{activeCategory === 'products' && <StorageNavOptions />}
+
+							<MdOutlineArrowRight className='-mt-1' />
+						</div>
+					</li>
 				</ul>
 
 				<span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-textPrimary transition-all duration-300 group-hover:w-full"></span>
@@ -341,15 +393,15 @@ const NavBar = () => {
 					</Link>
 
 					{/* menu icon */}
-					<div className="lg:hidden flex items-center justify-end ml-auto">
-						<button onClick={toggleDrawer} className="text-4xl font-bold text-white">
+					<div className="drawer-content lg:hidden flex items-center justify-end ml-auto">
+						<label htmlFor="my-drawer-4" className="text-4xl font-bold text-white">
 							<IoMenu />
-						</button>
+						</label>
 					</div>
 				</div>
 			</div>
 
-			{isDrawerOpen && (
+			{/* {isDrawerOpen && (
 				<div className="fixed inset-0 z-50 bg-opacity-50 lg:hidden ">
 					<div className="absolute flex justify-between flex-row-reverse top-0 right-0 w-[80%] sm:w-[60%] min-h-[2000px]  bg-black bg-opacity-95 p-4 font-bold">
 						<button
@@ -363,9 +415,18 @@ const NavBar = () => {
 						</ul>
 					</div>
 				</div>
-			)}
+			)} */}
+			<div className="drawer drawer-end">
+				<input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+				<div className="drawer-side">
+					<label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+					<ul className="flex flex-col gap-8 bg-black min-h-full w-80 p-6  text-textPrimary">
+						{listing}
+					</ul>
+				</div>
+			</div>
 
-		</nav>
+		</nav >
 
 	);
 };
