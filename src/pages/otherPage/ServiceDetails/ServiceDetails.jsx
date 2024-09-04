@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import SectionTopStyle from '../../../components/SectionTopStyle/SectionTopStyle';
 
 const ServiceDetails = () => {
 	const [openModal, setOpenModal] = useState(false);
@@ -15,7 +15,7 @@ const ServiceDetails = () => {
 	const { data: service = [] } = useQuery({
 		queryKey: ['service', id],
 		queryFn: async () => {
-			const result = await axiosPublic.get(`services/${id}`);
+			const result = await axiosPublic.get(`service/${id}`);
 			return result.data;
 		},
 	});
@@ -56,17 +56,29 @@ const ServiceDetails = () => {
 	};
 
 	return (
-		<div>
-			<SectionTitle title="Service Details" />
+		<div className='max-w-[1800px] mx-auto'>
+			<SectionTopStyle title={service.name} content={service.details} backgroundImage={service.image} />
 			{/* Service Details */}
-			<div className="flex flex-col md:flex-row m-10 md:m-20 justify-center items-center gap-10">
-				<img className="w-72 " src={service.image} alt="Image" />
-				<div>
-					<h1 className="text-3xl font-bold my-4">{service.name}</h1>
-					<p>{service.details}</p>
-				</div>
-			</div>
+			{service.services?.map((single_service, index) =>
+				<div key={index} className="flex flex-col md:flex-row m-10 md:m-20 items-center gap-10">
+					<img className="w-72 " src={single_service.image} alt={single_service.title} />
+					<div className='col-span-2'>
+						<h1 className="text-lg uppercase sm:text-3xl font-bold my-4">{single_service.title}</h1>
+						{single_service.small_details &&
+							<p className='my-4'>{single_service.small_details}</p>
+						}
+						<ul className='list-disc ml-5 flex-grow'>
+							{single_service.description.split(">").map((part, index) => (
+								<li key={index}>{part.trim()}</li>
+							))}
+						</ul>
 
+					</div>
+				</div>
+			)
+			}
+
+			{/* request button */}
 			<div>
 				<button
 					onClick={() => setOpenModal(true)}
@@ -81,18 +93,16 @@ const ServiceDetails = () => {
 			<div className="mx-auto flex w-72 items-center justify-center">
 				<div
 					onClick={() => setOpenModal(false)}
-					className={`fixed z-[100] flex items-center justify-center ${
-						openModal ? 'opacity-1 visible' : 'invisible opacity-0'
-					} inset-0 h-full w-full bg-black/20 backdrop-blur-sm duration-100 
+					className={`fixed z-[100] flex items-center justify-center ${openModal ? 'opacity-1 visible' : 'invisible opacity-0'
+						} inset-0 h-full w-full bg-black/20 backdrop-blur-sm duration-100 
 					 overflow-y-auto`}
 				>
 					<div
 						onClick={e_ => e_.stopPropagation()}
-						className={`absolute w-full rounded-lg bg-white drop-shadow-2xl sm:w-[500px] ${
-							openModal
-								? 'opacity-1 translate-y-0 duration-300'
-								: '-translate-y-20 opacity-0 duration-150'
-						}`}
+						className={`absolute w-full rounded-lg bg-white drop-shadow-2xl sm:w-[500px] ${openModal
+							? 'opacity-1 translate-y-0 duration-300'
+							: '-translate-y-20 opacity-0 duration-150'
+							}`}
 					>
 						<form
 							ref={formValue}

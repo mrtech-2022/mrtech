@@ -1,0 +1,91 @@
+[
+    {
+        "name": "CCTV Surveillance System Setup",
+        "icon":"https://i.ibb.co/bNpKBdv/cctv1.jpg",
+        "details": "CCTV Surveillance is a system that allows you to keep an eye on what’s going on in and around your home, business, and outside. Cameras and monitors enable you to view events live, and recorders archive footage for later reference. Don’t mistake a CCTV monitor for an ordinary television. It doesn’t receive publicly broadcasted content—only footage from security cameras installed on the premises. There are so many different types of CCTV cameras on the market. There are now a variety of solutions for every industry. As a result of this huge range, it can be difficult to choose which CCTV camera is right for you.",
+        "image": "https://i.ibb.co/wWMpF1L/Up.jpg",
+        "services": [
+            {
+                "title": "HOME CCTV SYSTEM SETUP & SERVICE",
+                "description": "Plan and prepare (How many cameras you want, which camera) > DVR / NVR (What you need) > Data Store with HDD > Monitor / Smart TV > Connection Video Belone & Adapter > Power up with Cables",
+                "image": "https://i.ibb.co/7jQKMDB/cctv1.jpg"
+            },
+            {
+                "title": "CORPORATE CCTV SYSTEM SETUP & SERVICE",
+                "description": "Plan and prepare (How many cameras you want & Camera Type) > Server (What you need) > Data Store Solution > Monitoring System (According to your organization) > Connection and Control Room > Power up with Ether-cable > Configure the Corporate CCTV system",
+                "image": "https://i.ibb.co/JcQYtMp/cctv2.jpg"
+            },
+            {
+                "title": "OUTDOOR CCTV SYSTEM SETUP & SERVICE",
+                "description": "Plan and prepare (How many cameras you want & Camera Type) > Server (According to your need) > Data Store Solution > Monitoring System (According to your NEED) > Connection and Control Room > Power up with Ether-cable > Configure the Outdoor CCTV system",
+                "image": "https://i.ibb.co/0qhf1Sb/cctv3.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Access Control System",
+        "icon":"https://i.ibb.co/wrmRvjB/access-control.png",
+        "details": "Access control systems enable you to control who has access to your building, room, class, office, etc. access control is to minimize the security risk of unauthorized access to your area.",
+        "image": "https://i.ibb.co/Tmt09Xk/Up.jpg",
+        "services": [
+            {
+                "title": "Mechanical punching time Attendance machine",
+                "description": "Simple and intuitive > No need for computer knowledge > The price is relatively low.",
+                "image": "https://i.ibb.co/wpDt29p/Mechanical-punching-time-Attendance-machine.png"
+            },
+            {
+                "title": "RFID Access Control & Time attendance",
+                "description": "Computers can be used to count attendance data. > Better Communication & Transparency > Enhanced Safety & Security > Improved Discipline and Better Grades.",
+                "image": "https://i.ibb.co/HpQkTqK/RFID-Access-Control-Time-attendance.png"
+            },
+            {
+                "title": "PIN Code Based Access Control & Time attendance",
+                "description": "This type of Access Control System is on one or many independent doors in a building. > It is relatively easy to use. > Typical PIN Applications > Best Practices for Selecting PINs",
+                "image": "https://i.ibb.co/jTcN2Fw/PIN-Code-Based-Access-Control-Time-attendance.png"
+            }
+        ]
+    },
+    {
+        "name": "Computer & Network Device System Setup / Service",
+        "icon":"https://i.ibb.co/cTj7YKP/laptop.jpg",
+        "details": "A  network device is a piece of hardware or software integral to communication between a computer and an internet network. Common network devices are: Routers, Switches, Hubs, Modems, Firewalls, Access points etc. Network devices manage traffic flow and direct data packets, provide security, and enable connectivity between network segments or the Internet. Each device serves a specific purpose that allows for a seamless flow of information and connectivity across an organization’s IT ecosystem. ",
+        "image": "https://i.ibb.co/XS8J9Yx/Up.jpg",
+        "services": [
+            {
+                "title": "Computer Configuring ",
+                "description": "Plan and prepare (According you need) > Hardware (Motherboard) > Processor > RAM > Data Storage Type > DVD Writer > Connection with Cables ",
+                "image": "https://i.ibb.co/n65mBGt/computer-configure.jpg"
+            },
+            {
+                "title": "COMPUTER & NETWORK DEVICE SETUP / SERVICE",
+                "description": "Peer to Peer connection > Control access to these resources through the use of network log-in and connections > Centralize resources for easy research and utilization > Connect computers to shared devices like scanners, printers, device to device etc. > Client server connection (Hub, Switch, router, Access Point, Firewall) > PAN, LAN, WAN, WLAN etc. connection",
+                "image": "https://i.ibb.co/6Y3RnpP/network.jpg"
+            }
+        ]
+    },
+    {
+        "name": "What are the PBX types?",
+        "icon":"https://i.ibb.co/SNQJDx6/pbx.png",
+        "details": "With so many benefits to business, it’s understandable that businesses want to implement PBX as the preferred telecommunications’ system. Once you’ve decided on PBX as the solution for you, it’s time to choose between the 4 PBX options. Here’s an overview of the systems. ",
+        "image": "https://i.ibb.co/Kyp0XMF/Up.jpg",
+        "services": [
+            {
+                "title": "Analogue (or traditional) PBX System",
+                "description": "Extensions > Transfers > Mute > Re-dial > Speed dial > Digital answering assistants > Voicemail > Call Forwarding",
+                "image": "https://i.ibb.co/z8TLwKy/Analogue-PBX-System.png"
+            },
+            {
+                "title": "On-site VoIP PBX System",
+                "small_details": "The next step up in PBX system is the Voice IP (VoIP) which uses internet connections rather than traditional copper wire landlines. These on-site systems use your businesses’ internal network (LAN) to deliver enhanced call stability, improved sound quality and many more applications than the older models. These features or applications include. Although the initial installation costs may be more than an analogue PBX system, the cost savings more than make up for it in the long run. In fact, the business VoIP can save businesses up to 50 percent on the average phone bill. The VoIP is also much easier to maintain than traditional PBX and is only limited by the bandwidth space.",
+                "description": "Voicemail to email > Mobility integration > Video Calling > Caller ID and Call Waiting > Call-back options > Auto attendant",
+                "image": "https://i.ibb.co/3SZnzbP/On-site-Vo-IP-PBX-System.png"
+            },
+            {
+                "title": "Hybrid PBX System",
+                "small_details": "With the hybrid PBX system, if the legacy PBX or VoIP server is not functional, the system switches over to another network, making it great for remote offices and secondary locations. These are also a great option for temporary locations such as a construction site, with cordless phones connecting to the hybrid PBX system rather than using the building’s telephone lines.   This combines existing PBX equipment with the VoIP, offering many IP extensions that connect the phones to the office. Some of the features of this PBX system include: ",
+                "description": "Virtual conference rooms > Fax over IP > Video conferences > SIP trunking > Auto attendant > Hold queues",
+                "image": "https://i.ibb.co/b5r29VB/Hybrid-PBX-System.png"
+            }
+        ]
+    }
+]

@@ -6,7 +6,7 @@ const useServices = () => {
 	const { data: services = [], refetch } = useQuery({
 		queryKey: ['services'],
 		queryFn: async () => {
-			const result = await axiosPublic.get('/services');
+			const result = await axiosPublic.get('/service');
 			return result.data;
 		},
 	});

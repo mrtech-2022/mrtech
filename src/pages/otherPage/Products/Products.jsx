@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
 import { categoryNavOptions } from '../../shared/Navbar/NavOptions';
 import './Products.css';
-import { addToCart } from '../../../components/Cart/Cart';
+import { addToCart, getCartItems } from '../../../components/Cart/Cart';
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -15,6 +15,7 @@ const Products = () => {
 
     const [selectedBrand, setSelectedBrand] = useState(brandParam || null);
     const [modalProduct, setModalProduct] = useState(null);
+    const [cartItems, setCartItems] = useState(getCartItems()); // Manage cart state locally
 
     useEffect(() => {
         if (brandParam !== selectedBrand) {
@@ -29,6 +30,7 @@ const Products = () => {
 
     const handleAddToCart = (product) => {
         addToCart(product);
+        setCartItems(getCartItems()); // Update the cart items after adding to the cart
         setModalProduct(product);
         const modal = document.getElementById('my_modal_4');
         if (modal) {
@@ -45,6 +47,12 @@ const Products = () => {
     if (isLoading) return <p>Loading products...</p>;
     if (error) return <p>Failed to load products.</p>;
 
+    const { totalQuantity, subtotal } = cartItems.reduce((acc, item) => {
+        acc.totalQuantity += item.quantity;
+        acc.subtotal += item.specialPrice * item.quantity;
+        return acc;
+    }, { totalQuantity: 0, subtotal: 0 });
+
     return (
         <div className='min-h-screen mt-16'>
             <Helmet>
@@ -52,7 +60,7 @@ const Products = () => {
             </Helmet>
             <div className='m-6 md:m-10 md:my-24'>
                 {!subcategory && CategoryOptionsComponent && (
-                    <div className='max-w-screen-2xl mx-auto category-options-container md:flex items-center mb-4'>
+                    <div className='max-w-screen-2xl mx-auto category-options-container md:flex items-center mb-4 bg-gray-100 shadow-lg'>
                         <h2 className="text-xl font-bold mb-3 md:mb-4">Options:</h2>
                         <div className='flex flex-wrap m-0 md:m-2 md:gap-4'>
                             {CategoryOptionsComponent()}
@@ -60,9 +68,10 @@ const Products = () => {
                     </div>
                 )}
 
+
                 {subcategory && (
                     <div className='mb-4'>
-                        <div className='flex flex-wrap gap-4'>
+                        <div className='flex flex-wrap gap-4 bg-gray-100 shadow-lg p-3'>
                             <h2 className="text-xl font-bold mb-2">Brands:</h2>
                             {[...new Set(products.map(product => product.brand))].map((brand, index) => (
                                 <div key={index}>
@@ -134,36 +143,44 @@ const Products = () => {
             {/* Modal */}
             <dialog id="my_modal_4" className="modal">
                 <div className="modal-box w-11/12 max-w-4xl">
-                    <div className='flex justify-between items-center'>
+                    <div className='flex mb-2 justify-between items-center'>
                         <h3 className="font-bold text-lg">Added to Cart!</h3>
                         <div className="modal-action">
                             <form method="dialog">
-                                <button className="btn text-textPrimary">X</button>
+                                <button className="btn -mt-5 text-textPrimary">X</button>
                             </form>
                         </div>
                     </div>
-                    <p className="py-4 flex items-center gap-2">
-                        <FaCheckCircle className='text-green-500' />
-                        <span>
+                    <div className='md:grid grid-cols-6 items-start'>
+                        <p className="py-4 mr-2 col-span-4 flex items-center gap-2">
+                            <FaCheckCircle className='text-green-500' />
+                            <span>
 
-                            You have added
-                            <span className='text-textPrimary'>
-                                {modalProduct ? ` ${modalProduct.name} ` : ''}
+                                You have added
+                                <span className='text-textPrimary'>
+                                    {modalProduct ? ` ${modalProduct.name} ` : ''}
+                                </span>
+                                to your shopping cart!
                             </span>
-                            to your shopping cart!
-                        </span>
-                    </p>
+                        </p>
+                        <div className="border col-span-2 border-gray-300 rounded-lg p-4 inline-block text-left">
+                            <p className="text-gray-700 text-sm">
+                                Cart quantity: <span className="font-semibold text-black">{totalQuantity}</span>
+                            </p>
+                            <hr className="my-2 border-gray-300" />
+                            <p className="text-gray-700 text-sm">
+                                Cart Total: <span className="font-semibold text-black">{subtotal} Tk</span>
+                            </p>
+                        </div>
+                    </div>
                     <div className='flex gap-6 mt-4'>
-                        <Link to='/cart'>
-                            <button className='btn btn-info text-white bg-textSecondary'>
-                                View Cart
-                            </button>
-                        </Link>
+
                         <Link to='/checkout'>
                             <button className='btn btn-outline border-textSecondary border-2 hover:bg-textSecondary hover:border-none text-textSecondary'>
                                 Confirm Order
                             </button>
                         </Link>
+
                     </div>
                 </div>
             </dialog>

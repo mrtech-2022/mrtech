@@ -93,7 +93,7 @@ const NavBar = () => {
 					</svg>
 				</button>
 				<div className="hover-area"></div>
-				<ul className="dropdown-content w-32 uppercase space-y-2 rounded-lg py-2  ml-8 sm:ml-16 lg:ml-4 text-black lg:mt-5">
+				<ul className="dropdown-content w-32 space-y-2 rounded-lg py-2  ml-8 sm:ml-16 lg:ml-4 text-black lg:mt-5">
 					<Link to="/about-us">
 						<li className="px-3 hover:text-textPrimary" onClick={toggleDrawer}>
 							About US

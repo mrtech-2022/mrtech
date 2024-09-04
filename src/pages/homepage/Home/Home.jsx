@@ -10,12 +10,12 @@ const Home = () => {
 	return (
 		<div>
 			<Helmet>
-				<title>Home - MR Tech</title>
+				<title>Home | MR Tech</title>
 			</Helmet>
 			<Banner />
 			<About />
-			<Specialization />
 			<Services />
+			<Specialization />
 			<OurWorks />
 			<Clients />
 			{/* <Contacts /> */}
