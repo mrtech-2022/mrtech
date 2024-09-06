@@ -6,6 +6,7 @@ import { GiRotaryPhone } from "react-icons/gi";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { FaHome } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
+import { sendDataForm } from '../../../utils/sendDataForm';
 
 
 
@@ -40,9 +41,10 @@ const Contacts = () => {
 			return;
 		}
 
-		const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+
 		const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 		const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+		const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 
 		try {
 			const res = await emailjs.sendForm(serviceId, templateId, form, {

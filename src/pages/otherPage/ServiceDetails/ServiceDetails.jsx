@@ -27,7 +27,7 @@ const ServiceDetails = () => {
 		const number = form.number.value;
 		const address = form.address.value;
 		const details = form.details.value;
-		console.log(name, number, address, details);
+		// console.log(name, number, address, details);
 
 		// send service to email
 		const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -39,6 +39,7 @@ const ServiceDetails = () => {
 				publicKey: publicKey,
 			});
 			if (res.status == 200) {
+				setOpenModal(false);
 				toast.success('Your message sent successfully', {
 					style: {
 						backgroundColor: '#333',
@@ -47,7 +48,6 @@ const ServiceDetails = () => {
 					},
 				});
 				form.reset();
-				setOpenModal(false);
 			}
 		} catch (error) {
 			toast.error('error occured');
@@ -101,7 +101,7 @@ const ServiceDetails = () => {
 						onClick={e_ => e_.stopPropagation()}
 						className={`absolute w-full rounded-lg bg-white drop-shadow-2xl sm:w-[500px] ${openModal
 							? 'opacity-1 translate-y-0 duration-300'
-							: '-translate-y-20 opacity-0 duration-150'
+							: '-translate-y-20 opacity-0 duration-15'
 							}`}
 					>
 						<form
