@@ -1,42 +1,81 @@
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { clearCart, getCartItems } from '../../../components/Cart/Cart';
 import { sendDataForm } from '../../../utils/sendDataForm';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle'
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import { getAllDistrict, getAllUpazila } from 'bd-divisions-to-unions';
 
 const Checkout = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const cartItems = getCartItems()
+    const cartItems = getCartItems();
+
+    const [selectedDistrict, setSelectedDistrict] = useState("");
+    const [filteredUpazilas, setFilteredUpazilas] = useState([]);
+    const [dhakaUpazilas, setDhakaUpazilas] = useState([]);
+
+    const districtsData = getAllDistrict("en");
+    const upazilasData = getAllUpazila("en");
+
+    const districts = Object.values(districtsData).flat();
+
+    useEffect(() => {
+        fetch('/dhaka.json')
+            .then(response => response.json())
+            .then(data => setDhakaUpazilas(data))
+            .catch(error => console.error('Error fetching Dhaka Upazilas:', error));
+    }, []);
+
+    useEffect(() => {
+        // Log the filteredUpazilas to verify if data is being set correctly
+        // console.log('Filtered Upazilas:', filteredUpazilas);
+    }, [filteredUpazilas]);
+
+    const handleDistrictChange = (event) => {
+        const districtCode = JSON.parse(event.target.value);
+        console.log(districtCode.value);
+
+        const districtValue = Number(districtCode.value);
+        console.log("District Code Value:", districtValue);
+
+        setSelectedDistrict(districtCode);
+
+        if (districtValue === 26) {
+            setFilteredUpazilas(dhakaUpazilas);
+        } else {
+            const upazilas = upazilasData[districtCode.value] || [];
+            console.log(upazilas);
+            setFilteredUpazilas(upazilas);
+        }
+    };
 
     const subtotal = cartItems.reduce((total, item) => total + (item.specialPrice * item.quantity), 0);
+
     const onSubmit = (data, e) => {
         const form = e.target;
         const cartItemsString = cartItems.map(item =>
             `Name: ${item.name}, Quantity: ${item.quantity}, Price: ${item.specialPrice}, Total: ${item.specialPrice * item.quantity}`
-        ).join('\n'); // Convert cart items into a formatted string
+        ).join('\n');
 
         const orderDetails = {
-            ...data, // Automatically includes all form data (name, email, etc.)
-            cartItems: cartItemsString, // Use the formatted string instead of raw array
-            subtotal, // Total amount of the cart
-            total: subtotal + 60, // Include shipping fee
-            deliveryFee: 60 // Example delivery fee
+            ...data,
+            cartItems: cartItemsString,
+            subtotal,
+            total: subtotal + 60,
+            deliveryFee: 60
         };
 
         const serviceId = import.meta.env.VITE_EMAILJS_ORDER_SERVICE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_ORDER_PUBLIC_KEY;
         const templateId = import.meta.env.VITE_EMAILJS_ORDER_TEMPLATE_ID;
 
-        // Send the data using the sendDataForm function
         sendDataForm(orderDetails, form, serviceId, templateId, publicKey, "Your Order placed successfully");
-        clearCart()
+        clearCart();
     };
 
-    // m - 0 mt - 6 md: m - 20
     return (
         <div className="p-6 max-w-[1800px] bg-gray-100 min-h-screen md:mx-auto ">
             <SectionTitle title="Checkout" />
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-
                 {/* Customer Information */}
                 <div className="bg-white p-4 rounded shadow">
                     <h2 className="font-bold text-lg mb-4">
@@ -50,15 +89,9 @@ const Checkout = () => {
                     </div>
 
                     <div className="mt-4">
-                        <label className="block font-medium">Address*</label>
-                        <input {...register('address', { required: true })} placeholder="Address" className="block w-full border p-2 rounded" />
-                        {errors.address && <p className="text-red-500 text-sm">Address is required</p>}
-                    </div>
-
-                    <div className="mt-4">
                         <label className="block font-medium">Phone Number*</label>
                         <input {...register('number', { required: true })} placeholder="Phone Number" className="block w-full border p-2 rounded" />
-                        {errors.number && <p className="text-red-500 text-sm">Phone number  is required</p>}
+                        {errors.number && <p className="text-red-500 text-sm">Phone number is required</p>}
                     </div>
 
                     <div className="mt-4">
@@ -69,22 +102,48 @@ const Checkout = () => {
 
                     <div className="grid grid-cols-2 gap-4 mt-4">
                         <div>
-                            <label className="block font-medium">City*</label>
-                            <input {...register('city', { required: true })} placeholder="City" className="block w-full border p-2 rounded" />
-                            {errors.city && <p className="text-red-500 text-sm">City is required</p>}
-                        </div>
-
-                        <div>
-                            <label className="block font-medium">Zone*</label>
-                            <select {...register('zone', { required: true })} className="block w-full border p-2 rounded">
-                                <option value="">Select Zone</option>
-                                <option value="Rajshahi City">Rajshahi City</option>
-                                <option value="Dhaka City">Dhaka City</option>
+                            <label className="block font-medium">District*</label>
+                            <select
+                                {...register('district', { required: true })}
+                                onChange={handleDistrictChange}
+                                className="block w-full border p-2 rounded"
+                            >
+                                <option value="">Select District</option>
+                                {districts.map(district => (
+                                    <option
+                                        key={district.value}
+                                        // Store both `value` and `title` as JSON string in the value
+                                        value={JSON.stringify({ value: district.value, title: district.title })}
+                                    >
+                                        {district.title}
+                                    </option>
+                                ))}
                             </select>
-                            {errors.zone && <p className="text-red-500 text-sm">Zone is required</p>}
+                            {errors.district && <p className="text-red-500 text-sm">District is required</p>}
+                        </div>
+                        <div>
+                            <label className="block font-medium">Area*</label>
+                            <select
+                                {...register('area', { required: true })}
+                                className="block w-full border p-2 rounded"
+                            >
+                                <option value="">Select Area</option>
+                                {filteredUpazilas.map(upazilla => (
+                                    <option key={upazilla.value} value={upazilla.title}>{upazilla.title}</option>
+                                ))}
+                            </select>
+                            {errors.area && <p className="text-red-500 text-sm">Area is required</p>}
                         </div>
                     </div>
 
+                    {/* Address */}
+                    <div className="mt-4">
+                        <label className="block font-medium">Address*</label>
+                        <input {...register('address', { required: true })} placeholder="Details Address" className="block w-full border p-2 rounded" />
+                        {errors.address && <p className="text-red-500 text-sm">Address is required</p>}
+                    </div>
+
+                    {/* instruction */}
                     <div className="mt-4">
                         <label className="block font-medium">Instruction <small>(optional)</small></label>
                         <textarea {...register('instruction')} placeholder="Any Instruction" className="block w-full border p-2 rounded"></textarea>
@@ -92,7 +151,7 @@ const Checkout = () => {
                 </div>
 
                 {/* Payment Method */}
-                <div className=" p-4 rounded bg-white h-fit shadow">
+                <div className="p-4 rounded bg-white h-fit shadow">
                     <h2 className="font-bold text-lg mb-4">
                         <span className="text-red-500 bg-red-100 p-2 rounded-xl">2</span> Payment Method
                     </h2>
@@ -105,10 +164,11 @@ const Checkout = () => {
                             <input {...register('paymentMethod', { required: true })} type="radio" value="Online Payment" className="mr-2" />
                             Online Payment
                         </label>
+                        {errors.paymentMethod && <p className="text-red-500 text-sm">Payment method is required</p>}
                     </div>
 
+                    {/* coupon */}
                     <div className="mt-4">
-
                         <input {...register('coupon')} placeholder="Promo / Coupon Code" className="block w-full border p-2 rounded" />
                         <button className="mt-2 btn-sm bg-blue-500 btn-disabled text-white px-4 rounded">Apply Coupon</button>
                     </div>
@@ -125,9 +185,10 @@ const Checkout = () => {
                             Home Delivery - 60৳
                         </label>
                         <label className="mb-2">
-                            <input {...register('deliveryMethod', { required: true })} type="radio" value="Store Pickup" className="mr-2" />
-                            Store Pickup - 0৳
+                            <input {...register('deliveryMethod', { required: true })} type="radio" value="Pickup" className="mr-2" />
+                            Pickup - Free
                         </label>
+                        {errors.deliveryMethod && <p className="text-red-500 text-sm">Payment method is required</p>}
                     </div>
                 </div>
 
@@ -172,8 +233,8 @@ const Checkout = () => {
                         Confirm Order
                     </button>
                 </div>
-            </form >
-        </div >
+            </form>
+        </div>
     );
 };
 

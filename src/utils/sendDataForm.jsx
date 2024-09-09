@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 export const sendDataForm = async (orderDetails = {}, form, serviceId, templateId, publicKey, message) => {
     try {
@@ -8,12 +9,24 @@ export const sendDataForm = async (orderDetails = {}, form, serviceId, templateI
         if (res.status === 200) {
             // Reset form upon success
             form.reset();
-            toast.success(message, {
-                style: {
-                    backgroundColor: '#333',
-                    color: '#fff',
-                    fontWeight: 'bold',
+            Swal.fire({
+                title: "Your order placed Successfully!",
+                text: "Thank you for shopping",
+                icon: "success",
+                showClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                    `
                 },
+                hideClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                    `
+                }
             });
         }
     } catch (error) {
