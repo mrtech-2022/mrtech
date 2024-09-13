@@ -182,7 +182,7 @@ const ServiceDetails = () => {
 									/>
 								</div>
 							</div>
-							{/* button type will be submit for handling form submission*/}
+
 							<button
 								type="submit"
 								className="py-2 px-5 mb-4 mt-6 shadow-lg before:block before:-left-1 before:-top-1 before:bg-black before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%]  before:duration-500 before:-z-40 after:block after:-right-1 after:-bottom-1 after:bg-black after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-black relative inline-block font-bold text-white hover:bg-white hover:text-black transition-all ease-in-out duration-500"
